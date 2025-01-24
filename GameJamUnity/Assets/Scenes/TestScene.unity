@@ -288,15 +288,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5590251966310102105, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.362217
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5590251966310102105, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2486925
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5590251966310102105, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.1907063
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5590251966310102105, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -326,11 +326,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7590771965559770016, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1723556943193944761, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1642722819}
   m_SourcePrefab: {fileID: 100100000, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
+--- !u!1 &1642722811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1723556943193944761, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
+  m_PrefabInstance: {fileID: 1415505715}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1642722819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642722811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7c6dfc4adef964682b6242daa9d1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saltoAereo: 0
+  esprintar: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
