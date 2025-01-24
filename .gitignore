@@ -12,3 +12,9 @@ GameJamUnity/UserSettings/
 GameJamUnity/GameJamUnity.sln
 
 GameJamUnity/Assembly-CSharp.csproj
+
+GameJamUnity/.vs/
+
+GameJamUnity/obj/
+
+GameJamUnity/Assembly-CSharp-Editor.csproj
