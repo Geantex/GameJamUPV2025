@@ -18,7 +18,7 @@ public class apareceCasa : MonoBehaviour
 
             if (casaModelo == null)
             {
-                Debug.LogWarning("No se encontró el objeto CasaModelo en la jerarquía.");
+                Debug.LogWarning("No se encontrï¿½ el objeto CasaModelo en la jerarquï¿½a.");
             }
         }
         else
@@ -39,7 +39,7 @@ public class apareceCasa : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("CasaModelo no fue asignado o no se encontró en la jerarquía.");
+                Debug.LogWarning("CasaModelo no fue asignado o no se encontrï¿½ en la jerarquï¿½a.");
             }
 
             // Desactivamos el objeto Cylinder
