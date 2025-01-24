@@ -121,6 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f796d5d94f586f347b9a7587906d2e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burbujaPrefab: {fileID: 0}
+  puntoDeDisparo: {fileID: 8176918347877487652}
+  camaraPrincipal: {fileID: 5411264446756615448}
 --- !u!1 &1459613437668832947
 GameObject:
   m_ObjectHideFlags: 0
