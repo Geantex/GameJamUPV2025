@@ -31,7 +31,6 @@ public class playerController : MonoBehaviour
     private float coyote_variable = 0.0f; // Contador para el Coyote Time
     public float jumpBufferTime = 0.2f; // Tiempo máximo para el buffer de salto
     private float jumpBufferCounter = 0.0f; // Temporizador para el buffer de salto
-    private bool jumpHeld = false; // Indica si la barra espaciadora está siendo mantenida
 
     void Start()
     {
@@ -122,7 +121,6 @@ public class playerController : MonoBehaviour
             if (jumpBufferCounter > 0)
             {
                 verticalVelocity = jumpForce;
-                jumpHeld = false; // Resetea el estado del salto
                 coyote_variable = 0.0f; // Desactivar el Coyote Time
                 jumpBufferCounter = 0.0f; // Resetea el buffer
             }
@@ -174,15 +172,6 @@ public class playerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            jumpHeld = true; // Registrar que la barra espaciadora está siendo mantenida
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            jumpHeld = false; // Liberar el estado del salto continuo
-        }
 
         // Aplicar gravedad al movimiento
         Vector3 movement = currentMomentum;
