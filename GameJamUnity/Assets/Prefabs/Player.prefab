@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3127387800339504249}
   - component: {fileID: 8748525112446297520}
   - component: {fileID: 7872097304994120832}
-  - component: {fileID: 6642115599454501218}
   - component: {fileID: 3012531450472558809}
   m_Layer: 0
   m_Name: testArma
@@ -86,29 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6642115599454501218
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426814243311051419}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &3012531450472558809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f796d5d94f586f347b9a7587906d2e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burbujaPrefab: {fileID: 0}
+  burbujaPrefab: {fileID: 2203827052148040794, guid: 721e23d5b313d394cb3d54cefd917589, type: 3}
   puntoDeDisparo: {fileID: 8176918347877487652}
   camaraPrincipal: {fileID: 5411264446756615448}
 --- !u!1 &1459613437668832947
@@ -263,6 +239,7 @@ GameObject:
   - component: {fileID: 3035367747260958442}
   - component: {fileID: 5058540591028770919}
   - component: {fileID: 3351818543890610359}
+  - component: {fileID: 2226761529957363075}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -424,3 +401,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saltoAereo: 0
   esprintar: 1
+--- !u!114 &2226761529957363075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723556943193944761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caae5ec1af3064d4d8dbd137d423f766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMoney: 0
