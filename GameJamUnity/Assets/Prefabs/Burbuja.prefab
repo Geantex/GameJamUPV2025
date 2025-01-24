@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 8490599662126565767}
   - component: {fileID: 1612359449013783207}
   - component: {fileID: -2297033239310206050}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Burbuja
-  m_TagString: Untagged
+  m_TagString: Burbuja
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -13,6 +13,8 @@ public class burbujaHit : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Burbuja ha golpeado a un enemigo");
+            // cogemos el script de PlayerMoney del jugador, le buscamos con tag y le sumamos 100 monedas
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
             Destroy(other.gameObject);
         }
         Destroy(gameObject);
