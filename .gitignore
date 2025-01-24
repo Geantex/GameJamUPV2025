@@ -18,3 +18,5 @@ GameJamUnity/.vs/
 GameJamUnity/obj/
 
 GameJamUnity/Assembly-CSharp-Editor.csproj
+
+*.csproj
