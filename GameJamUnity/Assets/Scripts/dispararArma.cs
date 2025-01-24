@@ -24,26 +24,25 @@ public class dispararArma : MonoBehaviour
         RaycastHit hit;
 
         Vector3 direccionDisparo;
+        Quaternion rotacionDisparo;
 
         // Si el Raycast golpea algo, calcula la dirección hacia el punto de impacto
         if (Physics.Raycast(ray, out hit))
         {
             direccionDisparo = (hit.point - puntoDeDisparo.position).normalized;
+            rotacionDisparo = Quaternion.LookRotation(direccionDisparo);
+            //Debug.Log($"Impacto con: {hit.collider.gameObject.name}"); // Log del objeto impactado
         }
         else
         {
             // Si no golpea nada, dispara hacia adelante desde la cámara
             direccionDisparo = camaraPrincipal.transform.forward;
+            rotacionDisparo = Quaternion.LookRotation(direccionDisparo);
         }
 
-        // Instanciar la burbuja en el punto de disparo
-        GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, Quaternion.identity);
+        // Instanciar la burbuja en el punto de disparo con la rotación correcta
+        GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
 
-        // Asignar velocidad a la burbuja en la dirección del disparo
-        Rigidbody rb = burbuja.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.velocity = direccionDisparo * 10f; // Cambia "10f" por la velocidad deseada
-        }
+        // No es necesario asignar velocidad si la burbuja se mueve automáticamente
     }
 }

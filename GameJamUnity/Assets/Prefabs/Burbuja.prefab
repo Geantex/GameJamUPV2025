@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6270271264253917912}
   - component: {fileID: 8490599662126565767}
   - component: {fileID: 1612359449013783207}
+  - component: {fileID: -2297033239310206050}
   m_Layer: 0
   m_Name: Burbuja
   m_TagString: Untagged
@@ -101,7 +102,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -119,8 +120,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a82de8f359e9e174a83725c59671a0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
 --- !u!114 &1612359449013783207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2203827052148040794}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef313c17e1bfbd48a47851ee912f3a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatSpeed: 5
+  floatAmplitude: 0.1
+--- !u!114 &-2297033239310206050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,8 +144,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2203827052148040794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef313c17e1bfbd48a47851ee912f3a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 10d37e382276d6f42a0eb0f89f3ca853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatSpeed: 5
-  floatAmplitude: 0.1
