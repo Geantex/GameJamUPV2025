@@ -3,7 +3,7 @@ using TMPro; // Necesario si usas TextMeshPro
 
 public class CartelController : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textoPrecio; // Asigna el componente de texto desde el Inspector
+    [SerializeField] private TextMeshProUGUI textoPrecio; // Aasigna el componente de texto desde el Inspector
     [SerializeField] private apareceCasa scriptCasa; // Referencia al script que contiene costeCompra
 
     void Start()
