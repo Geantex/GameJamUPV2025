@@ -166,7 +166,7 @@ MonoBehaviour:
   efectoExplosionBurbuja: {fileID: 7715213001571057987, guid: 3ec2824df83b33a4d944a6b81987c3db, type: 3}
   recoverySpeed: 0.5
   isRecovery: 0
-  burnSpeed: 30
+  burnSpeed: 50
 --- !u!54 &5390516617066734348
 Rigidbody:
   m_ObjectHideFlags: 0
