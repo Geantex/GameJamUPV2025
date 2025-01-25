@@ -12,12 +12,21 @@ public class burbujaHit : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Burbuja ha golpeado a un enemigo");
-            // cogemos el script de PlayerMoney del jugador, le buscamos con tag y le sumamos 100 monedas
+            // Llama al método Muerte del script Enemigo para destruir completamente el objeto
+            Enemigo enemigoScript = other.GetComponentInParent<Enemigo>();
+            if (enemigoScript != null)
+            {
+                enemigoScript.Muerte();
+            }
+            else
+            {
+                Debug.LogError("El objeto golpeado no tiene el script Enemigo adjunto al padre.");
+            }
+
+            // Suma monedas al jugador
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
-            Destroy(other.gameObject);
         }
         Destroy(gameObject);
-
     }
 }
+
