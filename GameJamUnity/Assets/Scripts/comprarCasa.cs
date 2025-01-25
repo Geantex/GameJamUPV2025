@@ -1,15 +1,19 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // Necesario para cambiar de escena
 
 public class apareceCasa : MonoBehaviour
 {
     [SerializeField]
     public int costeCompra = 100;  // Ajusta en el Inspector el costo de la casa
     private GameObject casaModelo;  // Referencia al objeto CasaModelo
+  
 
     private void Start()
     {
-        // Encontramos el padre del padre del objeto que tenga este script (el Cylinder)
-        Transform parentOfParent = transform.parent?.parent;
+        
+       
+    // Encontramos el padre del padre del objeto que tenga este script (el Cylinder)
+    Transform parentOfParent = transform.parent?.parent;
 
         if (parentOfParent != null)
         {
@@ -27,6 +31,8 @@ public class apareceCasa : MonoBehaviour
         }
     }
 
+    
+
     private void OnTriggerEnter(Collider other)
     {
         // Verificamos si el objeto que entra en el trigger tiene el tag "Player"
@@ -34,14 +40,26 @@ public class apareceCasa : MonoBehaviour
         {
             // Obtenemos el script PlayerMoney del objeto que entró en el trigger
             PlayerMoney playerMoney = other.GetComponent<PlayerMoney>();
+            
 
             if (playerMoney != null)
             {
                 // Verificamos si el jugador tiene suficiente dinero
                 if (playerMoney.CurrentMoney >= costeCompra)
                 {
+                    contadorCasa contadorcasa = GameObject.FindGameObjectWithTag("GameManager").GetComponent<contadorCasa>();
+
                     // Gastamos el dinero (opcional, si quieres que se descuente)
                     playerMoney.SpendMoney(costeCompra);
+                    if(contadorcasa != null)
+                    {
+                        contadorcasa.SumarContador();
+
+                    }
+                    else
+                    {
+                        Debug.Log("¡Es null, nigga!");
+                    }
 
                     // Activamos el objeto CasaModelo si lo encontramos
                     if (casaModelo != null)
