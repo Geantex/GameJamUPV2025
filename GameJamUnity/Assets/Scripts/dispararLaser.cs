@@ -68,12 +68,12 @@ public class LaserMagico : MonoBehaviour
     void Update()
     {
         // Detectar click izquierdo para disparar
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             OnDisparar();
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(1))
         {
             OnDejarDeDisparar();
         }

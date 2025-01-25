@@ -14,7 +14,7 @@ public class dispararArma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             DispararBurbuja();
         }
@@ -42,7 +42,7 @@ public class dispararArma : MonoBehaviour
             direccionDisparo = camaraPrincipal.transform.forward;
             rotacionDisparo = Quaternion.LookRotation(direccionDisparo);
         }
-
+        /*
         //animacion epica
         if(animatorScript == null){
             animatorScript = GetComponent<dispararAnim>();
@@ -60,10 +60,11 @@ public class dispararArma : MonoBehaviour
             //el goblin animador dice: "este es un mensaje divertido espero que te rias"
             // la verdad es que no me ha hecho mucha gracia - el goblin suicida (pronto todo acabara)
             Debug.LogError("tienes que meter el animatorScript! - el goblin animador");
-        }
+        }*/
 
         // Instanciar la burbuja en el punto de disparo con la rotación correcta
         GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
+        Destroy(burbuja, 15f);
 
         // Desactivar la animación de disparo después de que termine
         

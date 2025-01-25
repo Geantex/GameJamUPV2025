@@ -21,13 +21,17 @@ public class SerCalcinadoPorLaser : MonoBehaviour
     // Referencia al script de Vida
     private Vida vida;
 
-    [Header ("Configuración de recuperación de color")]
+    [Header("Configuración de recuperación de color")]
     // Velocidad de recuperación del color
     [SerializeField]
     private float recoverySpeed = 0.5f;
 
     // Booleano para habilitar o deshabilitar la recuperación
     public bool isRecovery = false;
+
+    [Header("Configuración de quemado")]
+    // Velocidad de quemado
+    public float burnSpeed = 1f;
 
     void Start()
     {
@@ -43,11 +47,14 @@ public class SerCalcinadoPorLaser : MonoBehaviour
         }
 
         // Obtener referencia al componente "Vida"
-        vida = GetComponent<Vida>();
-        if (vida == null)
-        {
-            Debug.LogError("No se encontró el componente Vida en " + gameObject.name);
+        if(gameObject.tag != "Burbuja"){
+            vida = GetComponent<Vida>();
+            if (vida == null)
+            {
+                Debug.LogError("No se encontró el componente Vida en " + gameObject.name);
+            }
         }
+        
     }
 
     void Update()
@@ -76,7 +83,7 @@ public class SerCalcinadoPorLaser : MonoBehaviour
         {
             statsLaser statsLaserImpacto = other.GetComponent<statsLaser>();
             int damagePerFrame = statsLaserImpacto.damagePerFrame;
-            float burnPerFrame = statsLaserImpacto.burnPerFrame;
+            float burnPerFrame = statsLaserImpacto.burnPerFrame * burnSpeed; // Ajustar quemado según burnSpeed
             int extraDamageOnBurned = statsLaserImpacto.extraDamageOnBurned;
             GameObject efectoDeMuerte = statsLaserImpacto.efectoDeMuerte;
 
@@ -104,7 +111,7 @@ public class SerCalcinadoPorLaser : MonoBehaviour
             burnCounter = burnCounter + Mathf.RoundToInt(burnPerFrame);
 
             // Verificar si está completamente quemado
-            if (burnCounter >= 100 && !isCompletelyBurned && vida.MirarVida() > 0)
+            if (burnCounter >= 100 && !isCompletelyBurned && vida.MirarVida() > 0 && vida != null && gameObject.tag != "Burbuja")
             {
                 isCompletelyBurned = true;
                 if (vida != null)
@@ -112,6 +119,11 @@ public class SerCalcinadoPorLaser : MonoBehaviour
                     vida.QuitarVida(extraDamageOnBurned, efectoDeMuerte);
                 }
                 Debug.Log("El objeto está completamente ENJABONADO y recibió daño extra.");
+            }
+            if(gameObject.tag == "Burbuja" ){
+                // es hora de burbujear (explosion burbuja!!!) - el goblin burbuja
+                BurbujaExplosionArea burbujaExplosionArea = GetComponent<BurbujaExplosionArea>();
+
             }
         }
     }

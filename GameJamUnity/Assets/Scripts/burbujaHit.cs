@@ -6,13 +6,13 @@ public class burbujaHit : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("laser"))
         {
             return;
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            // Llama al método Muerte del script Enemigo para destruir completamente el objeto
+            // Llama al mï¿½todo Muerte del script Enemigo para destruir completamente el objeto
             Enemigo enemigoScript = other.GetComponentInParent<Enemigo>();
             if (enemigoScript != null)
             {
