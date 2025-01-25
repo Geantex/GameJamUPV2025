@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc03422f3c8c86a46b79e41d57a73c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaText: {fileID: 0}
 --- !u!1001 &8343771371229988999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -753,7 +754,7 @@ MonoBehaviour:
   damagePerFrame: 0
   burnPerFrame: 1
   extraDamageOnBurned: 100
-  efectoDeMuerte: {fileID: 9162927310806360893, guid: 984f54008d2f2db4fa9ff5cd65f6682e, type: 3}
+  efectoDeMuerte: {fileID: 540372716887097068, guid: 4f6a50b80a3b37e458ef8285b1f91afe, type: 3}
 --- !u!4 &7876217706471989679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2199715522589452584, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}

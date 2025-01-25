@@ -1493,7 +1493,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4d03124b627dc8841bc43d4c1e7646e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.4303703
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d03124b627dc8841bc43d4c1e7646e7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1501,7 +1501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d03124b627dc8841bc43d4c1e7646e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.89
+      value: -8.66
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d03124b627dc8841bc43d4c1e7646e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1653,6 +1653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3206561736772033540, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
+      propertyPath: efectoDeMuerte
+      value: 
+      objectReference: {fileID: 540372716887097068, guid: 4f6a50b80a3b37e458ef8285b1f91afe, type: 3}
     - target: {fileID: 3442973567356461250, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
       propertyPath: vidaText
       value: 

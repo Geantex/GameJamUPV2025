@@ -54,8 +54,6 @@ public class Vida : MonoBehaviour
         }*/
 
         // Cambiar a la escena de muerte
-        Debug.Log("El jugador ha muerto. Cambiando a la escena de muerte...");
-        SceneManager.LoadScene("muerte");
 
         Destroy(gameObject);
         Destroy(instanciaEfectoDeMuerte, 3f);
