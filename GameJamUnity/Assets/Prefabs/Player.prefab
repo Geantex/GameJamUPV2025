@@ -374,6 +374,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5982661381146966372, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982661381146966372, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982661381146966372, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9973602
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982661381146966372, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.07261215
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982661381146966372, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 8.328
+      objectReference: {fileID: 0}
     - target: {fileID: 5993086941592122518, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       propertyPath: m_Name
       value: arma
@@ -388,6 +408,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5993086941592122518, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1624656524246083651}
+    - targetCorrespondingSourceObject: {fileID: 5993086941592122518, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4426816034116850828}
   m_SourcePrefab: {fileID: 100100000, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
 --- !u!1 &2369103448443304977 stripped
 GameObject:
@@ -409,6 +432,29 @@ MonoBehaviour:
   burbujaPrefab: {fileID: 2203827052148040794, guid: 721e23d5b313d394cb3d54cefd917589, type: 3}
   puntoDeDisparo: {fileID: 8176918347877487652}
   camaraPrincipal: {fileID: 5411264446756615448}
+--- !u!114 &4426816034116850828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369103448443304977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed4bb7d3b0be394f8e85e7102483a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puntoDeDisparo: {fileID: 8176918347877487652}
+  cilindroPrefab: {fileID: 7997626716695144911, guid: 0cb950b0d3f0c684b94ae19fd27bfe77, type: 3}
+  camaraPrincipal: {fileID: 5411264446756615448}
+  velocidadLaser: 50
+  grosorInicial: 0.2
+  velocidadCambioGrosor: 2
+  colorLaser: {r: 0, g: 0, b: 1, a: 1}
+  distanciaMaximaSinImpacto: 100
+  velocidadSeno: 15
+  amplitudSenoGrosor: 0.02
+  amplitudSenoColor: 0.1
 --- !u!4 &7876217706471989679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2199715522589452584, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}

@@ -5,6 +5,7 @@ public class LaserMagico : MonoBehaviour
 {
     [SerializeField] private Transform puntoDeDisparo; // Punto de inicio del láser (la varita)
     [SerializeField] private GameObject cilindroPrefab; // Prefab del cilindro que usaremos como láser
+    [SerializeField] private Camera camaraPrincipal; // Cámara principal para el raycast
     [SerializeField] private float velocidadLaser = 50f; // Velocidad del láser avanzando hacia el punto final
     [SerializeField] private float grosorInicial = 0.2f; // Grosor inicial del láser
     [SerializeField] private float velocidadCambioGrosor = 2f; // Velocidad a la que el grosor cambia
@@ -66,13 +67,13 @@ public class LaserMagico : MonoBehaviour
 
     void Update()
     {
-        // Detectar la barra espaciadora para disparar
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Detectar click izquierdo para disparar
+        if (Input.GetMouseButtonDown(0))
         {
             OnDisparar();
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetMouseButtonUp(0))
         {
             OnDejarDeDisparar();
         }
@@ -173,17 +174,22 @@ public class LaserMagico : MonoBehaviour
         {
             // Calcular el punto final del láser
             Vector3 puntoFinal;
+            Vector3 direccion = camaraPrincipal.transform.forward;
+            Ray ray = new Ray(puntoDeDisparo.position, direccion);
             RaycastHit hit;
-            if (Physics.Raycast(puntoDeDisparo.position, puntoDeDisparo.forward, out hit, distanciaActual))
+
+            // Intentar avanzar el láser hacia el destino con velocidad constante
+            distanciaActual += velocidadLaser * Time.deltaTime;
+
+            if (Physics.Raycast(ray, out hit, distanciaActual))
             {
-                puntoFinal = hit.point; // Impacto con un objeto
-                distanciaActual = Vector3.Distance(puntoDeDisparo.position, hit.point); // Fijar la distancia en el impacto
+                puntoFinal = hit.point; // Detener el láser en el punto de impacto
+                distanciaActual = Vector3.Distance(puntoDeDisparo.position, hit.point); // Ajustar la distancia al impacto
             }
             else
             {
-                // Si no hay impacto, incrementar la distancia progresivamente
-                distanciaActual = Mathf.Min(distanciaActual + velocidadLaser * Time.deltaTime, distanciaMaximaSinImpacto);
-                puntoFinal = puntoDeDisparo.position + puntoDeDisparo.forward * distanciaActual;
+                // Si no hay impacto, avanzar hacia el punto máximo
+                puntoFinal = puntoDeDisparo.position + direccion * distanciaActual;
             }
 
             // Actualizar el cilindro para que toque exactamente el punto final
@@ -194,6 +200,8 @@ public class LaserMagico : MonoBehaviour
 
         disparando = false;
     }
+
+
 
     private IEnumerator EfectoSeno()
     {
@@ -261,7 +269,7 @@ public class LaserMagico : MonoBehaviour
         Vector3 direccion = fin - inicio;
 
         // Extender el láser 0.05 unidades más allá del punto final
-        fin += direccion.normalized * 0.05f;
+        //fin += direccion.normalized * 0.05f;
 
         // Calcular la posición del centro entre el inicio y el fin
         Vector3 posicionMedia = (inicio + fin) / 2f;
