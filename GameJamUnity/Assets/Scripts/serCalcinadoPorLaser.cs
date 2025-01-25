@@ -122,7 +122,7 @@ public class SerCalcinadoPorLaser : MonoBehaviour
                     {
                         vida.QuitarVida(extraDamageOnBurned, efectoDeMuerte);
                     }
-                    Debug.Log("El objeto está completamente ENJABONADO y recibió daño extra.");
+                    //Debug.Log("El objeto está completamente ENJABONADO y recibió daño extra.");
                 }
             }
             
