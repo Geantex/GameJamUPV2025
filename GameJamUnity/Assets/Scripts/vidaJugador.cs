@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class VidaJugador : MonoBehaviour
 {
@@ -7,10 +8,16 @@ public class VidaJugador : MonoBehaviour
     // Vida actual del jugador
     private int vidaActual;
 
+    // Referencia al texto del Canvas
+    public Text vidaText;
+
     void Start()
     {
         // Inicializar la vida del jugador
         vidaActual = vidaMaxima;
+
+        // Actualizar el texto en el Canvas
+        ActualizarTextoVida();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -31,11 +38,20 @@ public class VidaJugador : MonoBehaviour
 
         Debug.Log("Vida actual del jugador: " + vidaActual);
 
+        // Actualizar el texto en el Canvas
+        ActualizarTextoVida();
+
         // Verificar si el jugador ha muerto
         if (vidaActual <= 0)
         {
             MuerteJugador();
         }
+    }
+
+    private void ActualizarTextoVida()
+    {
+        // Actualizar el texto en el Canvas con la vida actual
+        vidaText.text = "Vida: " + vidaActual;
     }
 
     private void MuerteJugador()
