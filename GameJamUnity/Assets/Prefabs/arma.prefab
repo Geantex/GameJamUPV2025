@@ -355,7 +355,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -536,7 +536,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5176,7 +5176,7 @@ MonoBehaviour:
   bubbleParticles: {fileID: 1333160775536279360}
   cilindroGiratorio: {fileID: 7143816653671908024}
   emissionRate: 1.3
-  boostedEmissionRate: 50
+  boostedEmissionRate: 25
 --- !u!1 &6284815286742651682
 GameObject:
   m_ObjectHideFlags: 0
