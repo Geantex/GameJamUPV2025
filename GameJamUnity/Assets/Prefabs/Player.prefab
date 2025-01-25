@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 2226761529957363075}
   - component: {fileID: 2521202492510604094}
   - component: {fileID: 8403705421298235692}
+  - component: {fileID: 3442973567356461250}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -329,6 +330,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMoney: 0
+--- !u!114 &3442973567356461250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723556943193944761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc03422f3c8c86a46b79e41d57a73c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8343771371229988999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -722,7 +735,6 @@ MonoBehaviour:
   grosorInicial: 0.2
   velocidadCambioGrosor: 2
   colorLaser: {r: 0, g: 0.8089442, b: 1, a: 1}
-  distanciaMaximaSinImpacto: 1
   velocidadSeno: 15
   amplitudSenoGrosor: 0.02
   amplitudSenoColor: 0.1
