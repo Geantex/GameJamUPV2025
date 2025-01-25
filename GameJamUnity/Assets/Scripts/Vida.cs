@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement; // Necesario para cambiar de escena
 
 public class Vida : MonoBehaviour
 {
-    [Header("Configuraci�n de Vida")]
+    [Header("Configuración de Vida")]
     public int vidaInicial = 100; // Vida inicial del enemigo
     [SerializeField]
     private int vidaActual;
@@ -33,7 +34,8 @@ public class Vida : MonoBehaviour
         }
     }
 
-    public int MirarVida(){
+    public int MirarVida()
+    {
         return vidaActual;
     }
 
@@ -50,9 +52,12 @@ public class Vida : MonoBehaviour
         {
             administradorAudio.ReproducirSonidoExplosionMuerte();
         }*/
+
+        // Cambiar a la escena de muerte
+        Debug.Log("El jugador ha muerto. Cambiando a la escena de muerte...");
+        SceneManager.LoadScene("muerte");
+
         Destroy(gameObject);
         Destroy(instanciaEfectoDeMuerte, 3f);
-
     }
-
 }

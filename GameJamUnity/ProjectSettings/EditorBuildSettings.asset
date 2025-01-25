@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapaBellus.unity
     guid: 75428bbf19622ab4489b601ff80c249a
+  - enabled: 1
+    path: Assets/Scenes/muerte.unity
+    guid: 2c4f6ade6dcf9d64ba93801bd0e0813d
   m_configObjects: {}

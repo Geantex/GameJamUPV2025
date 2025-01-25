@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
+using UnityEngine.SceneManagement; // Necesario para cambiar de escena
 
 public class VidaJugador : MonoBehaviour
 {
@@ -60,5 +61,7 @@ public class VidaJugador : MonoBehaviour
         Debug.Log("El jugador ha muerto.");
 
         // Puedes añadir lógica adicional aquí, como reiniciar el nivel o mostrar un menú de derrota
+        // Cambiar a la escena de muerte
+        SceneManager.LoadScene("muerte");
     }
 }
