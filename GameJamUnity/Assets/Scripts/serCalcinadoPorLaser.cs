@@ -8,6 +8,9 @@ public class SerCalcinadoPorLaser : MonoBehaviour
     // Materiales del objeto y sus hijos
     private List<Material> materials = new List<Material>();
 
+    // Colores originales de los materiales
+    private List<Color> originalColors = new List<Color>();
+
     // Contador de veces que ha sido quemado
     [SerializeField]
     private int burnCounter = 0;
@@ -18,6 +21,14 @@ public class SerCalcinadoPorLaser : MonoBehaviour
     // Referencia al script de Vida
     private Vida vida;
 
+    [Header ("Configuración de recuperación de color")]
+    // Velocidad de recuperación del color
+    [SerializeField]
+    private float recoverySpeed = 0.5f;
+
+    // Booleano para habilitar o deshabilitar la recuperación
+    public bool isRecovery = false;
+
     void Start()
     {
         // Recopilar todos los materiales del objeto y sus hijos
@@ -27,6 +38,7 @@ public class SerCalcinadoPorLaser : MonoBehaviour
             if (renderer.material != null)
             {
                 materials.Add(renderer.material);
+                originalColors.Add(renderer.material.color); // Guardar color original
             }
         }
 
@@ -40,7 +52,21 @@ public class SerCalcinadoPorLaser : MonoBehaviour
 
     void Update()
     {
-        // El oscurecimiento ahora se maneja directamente en OnTriggerStay
+        // Si isRecovery está activado, permitir que los materiales se recuperen
+        if (isRecovery)
+        {
+            for (int i = 0; i < materials.Count; i++)
+            {
+                if (materials[i] != null)
+                {
+                    Color currentColor = materials[i].color;
+                    Color originalColor = originalColors[i];
+                    // Interpola entre el color actual y el color original
+                    Color newColor = Color.Lerp(currentColor, originalColor, recoverySpeed * Time.deltaTime);
+                    materials[i].color = newColor;
+                }
+            }
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -53,23 +79,25 @@ public class SerCalcinadoPorLaser : MonoBehaviour
             float burnPerFrame = statsLaserImpacto.burnPerFrame;
             int extraDamageOnBurned = statsLaserImpacto.extraDamageOnBurned;
             GameObject efectoDeMuerte = statsLaserImpacto.efectoDeMuerte;
-            // Oscurecer los materiales
+
+            // Define el color objetivo al que quieres llegar (en este caso, #00CEFF)
+            Color targetColor = new Color(0f, 0.807f, 1f); // Esto es #00CEFF convertido a RGB
+
             foreach (Material material in materials)
             {
                 if (material != null)
                 {
                     Color currentColor = material.color;
-                    Color darkerColor = Color.Lerp(currentColor, Color.black, burnPerFrame * Time.deltaTime);
-                    material.color = darkerColor;
+                    // Interpola entre el color actual y el color objetivo
+                    Color newColor = Color.Lerp(currentColor, targetColor, burnPerFrame * Time.deltaTime);
+                    material.color = newColor;
                 }
             }
-
 
             // Aplicar daño por frame
             if (vida != null)
             {
                 vida.QuitarVida(damagePerFrame, efectoDeMuerte);
-                
             }
 
             // Incrementar contador de quemado
@@ -83,7 +111,7 @@ public class SerCalcinadoPorLaser : MonoBehaviour
                 {
                     vida.QuitarVida(extraDamageOnBurned, efectoDeMuerte);
                 }
-                Debug.Log("El objeto está completamente calcinado y recibió daño extra.");
+                Debug.Log("El objeto está completamente ENJABONADO y recibió daño extra.");
             }
         }
     }
