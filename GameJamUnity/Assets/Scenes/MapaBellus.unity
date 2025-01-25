@@ -1653,6 +1653,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3206561736772033540, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
+      propertyPath: efectoDeMuerte
+      value: 
+      objectReference: {fileID: 540372716887097068, guid: 4f6a50b80a3b37e458ef8285b1f91afe, type: 3}
     - target: {fileID: 3442973567356461250, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
       propertyPath: vidaText
       value: 
