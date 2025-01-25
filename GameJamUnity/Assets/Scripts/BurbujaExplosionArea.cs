@@ -27,11 +27,11 @@ public class BurbujaExplosionArea : MonoBehaviour
             // Suma monedas al jugador
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
         }
-        if (other.gameObject.CompareTag("Burbuja") && explosionEnCadena)
+        /*if (other.gameObject.CompareTag("Burbuja") && explosionEnCadena)
         {
             SerCalcinadoPorLaser burbujaCadena = other.GetComponent<SerCalcinadoPorLaser>();
             burbujaCadena.BubbleBlast();
-        }
+        }*/
     }
 
 

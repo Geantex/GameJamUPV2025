@@ -14,6 +14,7 @@ public class burbujaHit : MonoBehaviour
         {
             SerCalcinadoPorLaser burbujaCadena = GetComponent<SerCalcinadoPorLaser>();
             burbujaCadena.BubbleBlast();
+            Destroy(other.gameObject);
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
