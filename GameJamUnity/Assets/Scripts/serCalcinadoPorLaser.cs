@@ -13,7 +13,9 @@ public class SerCalcinadoPorLaser : MonoBehaviour
 
     // Contador de veces que ha sido quemado
     [SerializeField]
-    private int burnCounter = 0;
+    public int burnCounter = 0;
+    [SerializeField] private GameObject efectoExplosionBurbuja; // Prefab del efecto de explosión
+
 
     // Variable para verificar si el objeto está completamente calcinado
     private bool isCompletelyBurned = false;
@@ -112,14 +114,30 @@ public class SerCalcinadoPorLaser : MonoBehaviour
 
 
             if(vida != null){
-
+                // Verificar si está completamente quemado
+                if (burnCounter >= 100 && !isCompletelyBurned && vida.MirarVida() > 0 && gameObject.tag != "Burbuja")
+                {
+                    isCompletelyBurned = true;
+                    if (vida != null)
+                    {
+                        vida.QuitarVida(extraDamageOnBurned, efectoDeMuerte);
+                    }
+                    Debug.Log("El objeto está completamente ENJABONADO y recibió daño extra.");
+                }
             }
             
             if(gameObject.tag == "Burbuja" && burnCounter >= 100){
-                // es hora de burbujear (explosion burbuja!!!) - el goblin burbuja
-                BurbujaExplosionArea burbujaExplosionArea = GetComponent<BurbujaExplosionArea>();
-
+                // Si la burbuja está completamente quemada, explotar
+                BubbleBlast();
             }
         }
+    }
+    public void BubbleBlast(){
+        Debug.Log("Voy a explotar - el goblin suicida");
+        // es hora de burbujear (explosion burbuja!!!) - el goblin burbuja
+        GameObject explosionBurbuja = Instantiate(efectoExplosionBurbuja, transform.position, Quaternion.identity);
+        BurbujaExplosionArea explosionArea = explosionBurbuja.GetComponent<BurbujaExplosionArea>();
+        explosionArea.ExplosionBurbuja();
+        Destroy(gameObject);
     }
 }
