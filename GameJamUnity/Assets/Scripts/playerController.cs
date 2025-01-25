@@ -8,6 +8,7 @@ public class playerController : MonoBehaviour
     public float mouseSensitivity; // Sensibilidad del ratón
     public float gravity; // Gravedad ajustable desde el inspector
     public Transform head; // Cámara (o cabeza) para rotar hacia arriba/abajo
+    public Transform gun; // Arma para rotar hacia arriba/abajo
     public float airControlMultiplier = 0.5f; // Control direccional en el aire (0 = sin control, 1 = igual que en el suelo)
 
     private CharacterController characterController; // Referencia al Character Controller
@@ -197,6 +198,26 @@ public class playerController : MonoBehaviour
 
             // Aplica el desplazamiento relativo al eje Y y X
             head.localPosition = new Vector3(horizontalOffset, 0.8f + verticalOffset, head.localPosition.z);
+        }
+
+        // GunBobbing
+        if (moveHorizontal != 0 || moveVertical != 0)
+        {
+            // Calcular frecuencia y amplitud en función de la velocidad
+            float gunFreq = BOB_FREQ * (currentSpeed / speed);
+            gunFreq = gunFreq/4000; // Ajuste para que el arma se
+
+            // Incrementa el temporizador basado en la frecuencia
+            t_bob += Time.deltaTime * gunFreq;
+
+            // Desplazamiento vertical (solo en el suelo)
+            float verticalOffset = characterController.isGrounded ? Mathf.Sin(t_bob) * BOB_AMP/4 : 0f;
+
+            // Desplazamiento lateral (siempre activo)
+            float horizontalOffset = Mathf.Cos(t_bob / 2) * BOB_SIDE_AMP;
+
+            // Aplica el desplazamiento relativo al eje Y y X
+            gun.localPosition = new Vector3(0.326f + horizontalOffset, verticalOffset - 0.51f, gun.localPosition.z);
         }
     }
 
