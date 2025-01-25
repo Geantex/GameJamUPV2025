@@ -436,6 +436,10 @@ PrefabInstance:
       propertyPath: tiempoEntreOleadas
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2454252611414789415, guid: 3c77d5d3c8ec53f43863039bfb20f799, type: 3}
+      propertyPath: enemigosCercanosMax
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 4233755189762976299, guid: 3c77d5d3c8ec53f43863039bfb20f799, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
