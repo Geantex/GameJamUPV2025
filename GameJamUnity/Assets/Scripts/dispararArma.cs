@@ -8,6 +8,9 @@ public class dispararArma : MonoBehaviour
     [SerializeField] private Transform puntoDeDisparo;
     [SerializeField] private Camera camaraPrincipal;
 
+    //hola soy yo el goblin que anima aqui esta el animador jijiji!
+    private dispararAnim animator;
+
     // Update is called once per frame
     void Update()
     {
@@ -40,9 +43,38 @@ public class dispararArma : MonoBehaviour
             rotacionDisparo = Quaternion.LookRotation(direccionDisparo);
         }
 
+        //animacion epica
+        animator = GetComponent<dispararAnim>();
+        if(animator != null)
+        {
+            animator.disparoAnim(true); // Activar la animación de disparo
+            StartCoroutine(thoseWhoStop());
+            
+        }
+        else
+        {
+            //el goblin animador dice: "este es un mensaje divertido espero que te rias"
+            Debug.LogError("tienes que meter el animator! - el goblin animador");
+        }
+
         // Instanciar la burbuja en el punto de disparo con la rotación correcta
         GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
 
-        // No es necesario asignar velocidad si la burbuja se mueve automáticamente
+        // Desactivar la animación de disparo después de que termine
+        
+    }
+
+    private IEnumerator thoseWhoStop()
+    {
+        // Obtener la duración de la animación de disparo desde el Animator
+        float duracionAnimacion = animator.thoseWhoMove();
+
+        // Esperar a que termine la animación
+        //a saber porque esto funciona si alguien lo cambia te juro que le ##~### BOBBA #~~##
+        // ups! - el goblin animador
+        yield return new WaitForSeconds(duracionAnimacion/10);
+
+        // Desactivar la animación de disparo
+        animator.disparoAnim(false);
     }
 }

@@ -1,41 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class dispararAnim : MonoBehaviour
 {
-    private Animator thoseWhoMove;
+    private Animator animator;
 
-    void Start()
+    private void Awake()
     {
-        // Obtén el componente Animator adjunto al mismo GameObject
-        thoseWhoMove = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
-    void Update()
+    // Método para activar/desactivar la animación de disparo
+    public void disparoAnim(bool mango)
     {
-        // Verifica si el Animator no es nulo
-        if (thoseWhoMove != null)
-        {
-            // Detecta si se ha hecho clic con el botón izquierdo del mouse
-            if (Input.GetMouseButtonDown(0))
-            {
-                // Establece el parámetro "isDisparar" en true
-                thoseWhoMove.SetBool("isDisparar", true);
-            }
+        animator.SetBool("isDisparar", mango);
+    }
 
-            // Verifica si la animación ha terminado
-            if (thoseWhoMove.GetBool("isDisparar"))
-            {
-                // Obtén el estado actual de la animación
-                AnimatorStateInfo stateInfo = thoseWhoMove.GetCurrentAnimatorStateInfo(0);
-
-                // Si la animación ha terminado, establece "isDisparar" en false
-                if (stateInfo.IsName("disparar"))
-                {
-                    thoseWhoMove.SetBool("isDisparar", false);
-                }
-            }
-        }
+    // Método para obtener la duración de la animación de disparo
+    public float thoseWhoMove()
+    {
+        // Obtén la duración de la animación de disparo desde el Animator
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        return stateInfo.length;
     }
 }
