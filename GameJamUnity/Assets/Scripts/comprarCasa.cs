@@ -3,7 +3,7 @@ using UnityEngine;
 public class apareceCasa : MonoBehaviour
 {
     [SerializeField]
-    private int costeCompra = 100;  // Ajusta en el Inspector el costo de la casa
+    public int costeCompra = 100;  // Ajusta en el Inspector el costo de la casa
     private GameObject casaModelo;  // Referencia al objeto CasaModelo
 
     private void Start()
