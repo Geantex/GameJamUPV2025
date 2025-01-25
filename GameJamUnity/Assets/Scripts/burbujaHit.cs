@@ -6,9 +6,14 @@ public class burbujaHit : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("laser"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("laser") || other.gameObject.CompareTag("Burbuja"))
         {
             return;
+        }
+        if(other.gameObject.CompareTag("BurbujaBlast"))
+        {
+            SerCalcinadoPorLaser burbujaCadena = GetComponent<SerCalcinadoPorLaser>();
+            burbujaCadena.BubbleBlast();
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
