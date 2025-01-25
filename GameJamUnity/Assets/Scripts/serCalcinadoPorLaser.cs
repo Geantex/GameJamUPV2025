@@ -20,8 +20,6 @@ public class SerCalcinadoPorLaser : MonoBehaviour
     // Variable para verificar si el objeto está completamente calcinado
     private bool isCompletelyBurned = false;
 
-    // Referencia al script de Vida
-    private Vida vida;
 
     [Header("Configuración de recuperación de color")]
     // Velocidad de recuperación del color
@@ -45,15 +43,6 @@ public class SerCalcinadoPorLaser : MonoBehaviour
             {
                 materials.Add(renderer.material);
                 originalColors.Add(renderer.material.color); // Guardar color original
-            }
-        }
-
-        // Obtener referencia al componente "Vida"
-        if(gameObject.tag != "Burbuja"){
-            vida = GetComponent<Vida>();
-            if (vida == null)
-            {
-                Debug.LogError("No se encontró el componente Vida en " + gameObject.name);
             }
         }
         
@@ -110,29 +99,20 @@ public class SerCalcinadoPorLaser : MonoBehaviour
                     }
                 }
             }
-
-            // Aplicar daño por frame
-            if (vida != null)
-            {
-                vida.QuitarVida(damagePerFrame, efectoDeMuerte);
-            }
-
             // Incrementar contador de quemado
             burnCounter = burnCounter + Mathf.RoundToInt(burnPerFrame);
 
-            if (vida != null)
+            if (gameObject.tag != "Burbuja")
             {
                 // Verificar si está completamente quemado
-                if (burnCounter >= 100 && !isCompletelyBurned && vida.MirarVida() > 0 && gameObject.tag != "Burbuja")
+                if (burnCounter >= 100 && !isCompletelyBurned && gameObject.tag != "Burbuja")
                 {
                     isCompletelyBurned = true;
-
-                    if (vida != null)
-                    {
-                        vida.QuitarVida(extraDamageOnBurned, efectoDeMuerte);
-                        // Suma monedas al jugador
-                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
-                    }
+                    // matar enemigo
+                    GetComponent<Enemigo>().Muerte();
+                    // Suma monedas al jugador
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
+                    
                 }
             }
 
