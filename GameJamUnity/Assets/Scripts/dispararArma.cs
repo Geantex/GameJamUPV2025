@@ -9,7 +9,8 @@ public class dispararArma : MonoBehaviour
     [SerializeField] private Camera camaraPrincipal;
 
     //hola soy yo el goblin que anima aqui esta el animador jijiji!
-    private dispararAnim animatorScript;
+
+ 
 
     // Update is called once per frame
     void Update()
@@ -25,7 +26,7 @@ public class dispararArma : MonoBehaviour
         // Crear un Ray desde el centro de la cámara
         Ray ray = camaraPrincipal.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
-
+        
         Vector3 direccionDisparo;
         Quaternion rotacionDisparo;
 
@@ -42,47 +43,23 @@ public class dispararArma : MonoBehaviour
             direccionDisparo = camaraPrincipal.transform.forward;
             rotacionDisparo = Quaternion.LookRotation(direccionDisparo);
         }
-        /*
-        //animacion epica
-        if(animatorScript == null){
-            animatorScript = GetComponent<dispararAnim>();
-        }
-        Animator animator = GetComponent<Animator>();
-        animator.enabled = true;
-        if(animatorScript != null)
+        GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
+        Destroy(burbuja, 15f);
+        disparoMover();
+
+    }
+    public void disparoMover()
+    {
+      Retroceso retroceso = this.GetComponent<Retroceso>();
+      // Verificar si se encontró el componente
+        if (retroceso != null)
         {
-            animatorScript.disparoAnim(true); // Activar la animación de disparo
-            StartCoroutine(thoseWhoStop());
-            
+            // Llamar a la función AplicarRetroceso pasando el GameObject actual
+            retroceso.AplicarRetroceso(this.gameObject);
         }
         else
         {
-            //el goblin animador dice: "este es un mensaje divertido espero que te rias"
-            // la verdad es que no me ha hecho mucha gracia - el goblin suicida (pronto todo acabara)
-            Debug.LogError("tienes que meter el animatorScript! - el goblin animador");
-        }*/
-
-        // Instanciar la burbuja en el punto de disparo con la rotación correcta
-        GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
-        Destroy(burbuja, 15f);
-
-        // Desactivar la animación de disparo después de que termine
-        
-    }
-
-    private IEnumerator thoseWhoStop()
-    {
-        // Obtener la duración de la animación de disparo desde el animatorScript
-        float duracionAnimacion = animatorScript.thoseWhoMove();
-
-        // Esperar a que termine la animación
-        //a saber porque esto funciona si alguien lo cambia te juro que le ##~### BOBBA #~~##
-        // ups! - el goblin animador
-        yield return new WaitForSeconds(duracionAnimacion);
-
-        // Desactivar la animación de disparo
-        animatorScript.disparoAnim(false);
-        Animator animator = GetComponent<Animator>();
-        animator.enabled = false;
+            Debug.LogError("Mete el script RETROCESO, en el arma.. -el goblin cansado");
+        }
     }
 }
