@@ -59,7 +59,6 @@ public class BurbujaExplosionArea : MonoBehaviour
         // Gradualmente aumentar el radio del collider
         while (elapsedTime < duration)
         {
-            Debug.Log("radio: " + explosionCollider.radius);
             elapsedTime += Time.deltaTime;
 
             // Interpolar entre el radio inicial y el final

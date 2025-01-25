@@ -92,14 +92,22 @@ public class SerCalcinadoPorLaser : MonoBehaviour
             // Define el color objetivo al que quieres llegar (en este caso, #00CEFF)
             Color targetColor = new Color(0f, 0.807f, 1f); // Esto es #00CEFF convertido a RGB
 
-            foreach (Material material in materials)
+            // Iterar sobre todos los materiales del objeto y sus renderers
+            Renderer[] renderers = GetComponentsInChildren<Renderer>();
+            foreach (Renderer renderer in renderers)
             {
-                if (material != null)
+                Material[] rendererMaterials = renderer.materials; // Acceder al array de materiales del renderer
+                for (int i = 0; i < rendererMaterials.Length; i++)
                 {
-                    Color currentColor = material.color;
-                    // Interpola entre el color actual y el color objetivo
-                    Color newColor = Color.Lerp(currentColor, targetColor, burnPerFrame * Time.deltaTime);
-                    material.color = newColor;
+                    Material material = rendererMaterials[i];
+                    if (material != null)
+                    {
+                        Color currentColor = material.color;
+
+                        // Interpolar entre el color actual y el color objetivo
+                        Color newColor = Color.Lerp(currentColor, targetColor, burnPerFrame * Time.deltaTime);
+                        material.color = newColor;
+                    }
                 }
             }
 
@@ -112,26 +120,30 @@ public class SerCalcinadoPorLaser : MonoBehaviour
             // Incrementar contador de quemado
             burnCounter = burnCounter + Mathf.RoundToInt(burnPerFrame);
 
-
-            if(vida != null){
+            if (vida != null)
+            {
                 // Verificar si está completamente quemado
                 if (burnCounter >= 100 && !isCompletelyBurned && vida.MirarVida() > 0 && gameObject.tag != "Burbuja")
                 {
                     isCompletelyBurned = true;
+
                     if (vida != null)
                     {
                         vida.QuitarVida(extraDamageOnBurned, efectoDeMuerte);
+                        // Suma monedas al jugador
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
                     }
-                    //Debug.Log("El objeto está completamente ENJABONADO y recibió daño extra.");
                 }
             }
-            
-            if(gameObject.tag == "Burbuja" && burnCounter >= 100){
+
+            if (gameObject.tag == "Burbuja" && burnCounter >= 100)
+            {
                 // Si la burbuja está completamente quemada, explotar
                 BubbleBlast();
             }
         }
     }
+
     public void BubbleBlast(){
         Debug.Log("Voy a explotar - el goblin suicida");
         // es hora de burbujear (explosion burbuja!!!) - el goblin burbuja

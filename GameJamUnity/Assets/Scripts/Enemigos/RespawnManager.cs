@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class RespawnManager : MonoBehaviour
 {
@@ -81,7 +82,7 @@ public class RespawnManager : MonoBehaviour
         float distancia = Random.Range(distanciaMinimaJugador, distanciaMaximaJugador);
         Vector3 spawnPos = posicionJugador + new Vector3(randomDir.x, 0, randomDir.y) * distancia;
 
-        // Asegurar que la posición esté en el nivel del suelo
+        // Asegurar que la posiciï¿½n estï¿½ en el nivel del suelo
         spawnPos.y = 0;
         return spawnPos;
     }
@@ -91,7 +92,11 @@ public class RespawnManager : MonoBehaviour
         int count = 0;
         foreach (var enemigo in enemigosActivos)
         {
-            if (Vector3.Distance(jugador.position, enemigo.transform.position) <= distanciaMaximaJugador)
+            if (enemigo == null)
+            {
+                
+            }
+            else if (Vector3.Distance(jugador.position, enemigo.transform.position) <= distanciaMaximaJugador)
             {
                 count++;
             }
