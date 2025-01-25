@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class girar_municion : MonoBehaviour
 {
-    public float rotationSpeed = 50f; // Velocidad normal de rotación
+    public float rotationSpeed = 50f; // Velocidad normal de rotaciï¿½n
     public float boostedSpeed = 150f; // Velocidad aumentada
-    public float boostDuration = 2f; // Duración del aumento de velocidad en segundos
-    [SerializeField] ParticleSystem bubbleParticles; // Partículas
+    public float boostDuration = 2f; // Duraciï¿½n del aumento de velocidad en segundos
+    [SerializeField] ParticleSystem bubbleParticles; // Partï¿½culas
     [SerializeField] GameObject cilindroGiratorio;
-    public float emissionRate = 2f; // Ratio normal de emisión
-    public float boostedEmissionRate = 100f; // Ratio de emisión durante el boost
+    public float emissionRate = 2f; // Ratio normal de emisiï¿½n
+    public float boostedEmissionRate = 100f; // Ratio de emisiï¿½n durante el boost
 
-    private float currentSpeed; // Velocidad actual de rotación
+    private float currentSpeed; // Velocidad actual de rotaciï¿½n
 
-    private ParticleSystem.EmissionModule emissionModule; // Módulo de emisión
+    private ParticleSystem.EmissionModule emissionModule; // Mï¿½dulo de emisiï¿½n
 
     void Start()
     {
         // Inicializa la velocidad actual con la velocidad normal
         currentSpeed = rotationSpeed;
 
-        // Obtén el módulo de emisión de las partículas
+        // Obtï¿½n el mï¿½dulo de emisiï¿½n de las partï¿½culas
         emissionModule = bubbleParticles.emission;
 
-        // Configura el ratio inicial de emisión
+        // Configura el ratio inicial de emisiï¿½n
         emissionModule.rateOverTime = emissionRate;
     }
 
@@ -36,7 +36,7 @@ public class girar_municion : MonoBehaviour
             currentSpeed -= currentSpeed / 100;
         }
 
-        // Si el ratio de emisión actual es mayor que el normal, también se reduce gradualmente
+        // Si el ratio de emisiï¿½n actual es mayor que el normal, tambiï¿½n se reduce gradualmente
         if (emissionModule.rateOverTime.constant > emissionRate)
         {
             float newEmissionRate = emissionModule.rateOverTime.constant - emissionModule.rateOverTime.constant / 100;
@@ -47,12 +47,16 @@ public class girar_municion : MonoBehaviour
         cilindroGiratorio.transform.Rotate(Vector3.forward * currentSpeed * Time.deltaTime);
 
         // Simula un boost al presionar la tecla Espacio
-        if (Input.GetMouseButtonDown(0)) // 0 es el botón izquierdo del mouse
+        if (Input.GetMouseButtonDown(0)) // 0 es el botï¿½n izquierdo del mouse
         {
-            currentSpeed = boostedSpeed;
-
-            // Cambia el ratio de emisión al valor aumentado
-            emissionModule.rateOverTime = boostedEmissionRate;
+            BoostSpeed();
         }
+    }
+    public void BoostSpeed()
+    {
+        currentSpeed = boostedSpeed;
+
+        // Cambia el ratio de emisiï¿½n al valor aumentado
+        emissionModule.rateOverTime = boostedEmissionRate;
     }
 }

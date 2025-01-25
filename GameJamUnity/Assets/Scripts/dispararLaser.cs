@@ -170,6 +170,8 @@ public class LaserMagico : MonoBehaviour
             efectoSenoCoroutine = StartCoroutine(EfectoSeno());
         }
 
+        girar_municion girarMunicion = GetComponent<girar_municion>();
+
         while (disparando)
         {
             // Calcular el punto final del láser
@@ -191,7 +193,7 @@ public class LaserMagico : MonoBehaviour
                 // Si no hay impacto, avanzar hacia el punto máximo
                 puntoFinal = puntoDeDisparo.position + direccion * distanciaActual;
             }
-
+            girarMunicion.BoostSpeed();
             // Actualizar el cilindro para que toque exactamente el punto final
             ActualizarCilindro(puntoDeDisparo.position, puntoFinal);
 

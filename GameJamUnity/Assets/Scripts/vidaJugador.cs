@@ -51,7 +51,9 @@ public class VidaJugador : MonoBehaviour
     private void ActualizarTextoVida()
     {
         // Actualizar el texto en el Canvas con la vida actual
-        vidaText.text = "Vida: " + vidaActual;
+        if (vidaText != null){
+            vidaText.text = "Vida: " + vidaActual;
+        }
     }
 
     private void MuerteJugador()
