@@ -10,7 +10,7 @@ public class LaserMagico : MonoBehaviour
     [SerializeField] private float grosorInicial = 0.2f; // Grosor inicial del láser
     [SerializeField] private float velocidadCambioGrosor = 2f; // Velocidad a la que el grosor cambia
     [SerializeField] private Color colorLaser = Color.blue; // Color del láser
-    [SerializeField] private float distanciaMaximaSinImpacto = 100f; // Distancia máxima si no hay impacto
+    //[SerializeField] private float distanciaMaximaSinImpacto = 100f; // Distancia máxima si no hay impacto
     [SerializeField] private float velocidadSeno = 15f;
     [SerializeField] private float amplitudSenoGrosor = 0.02f;
     [SerializeField] private float amplitudSenoColor = 0.1f;

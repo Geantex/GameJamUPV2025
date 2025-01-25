@@ -110,17 +110,12 @@ public class SerCalcinadoPorLaser : MonoBehaviour
             // Incrementar contador de quemado
             burnCounter = burnCounter + Mathf.RoundToInt(burnPerFrame);
 
-            // Verificar si está completamente quemado
-            if (burnCounter >= 100 && !isCompletelyBurned && vida.MirarVida() > 0 && vida != null && gameObject.tag != "Burbuja")
-            {
-                isCompletelyBurned = true;
-                if (vida != null)
-                {
-                    vida.QuitarVida(extraDamageOnBurned, efectoDeMuerte);
-                }
-                Debug.Log("El objeto está completamente ENJABONADO y recibió daño extra.");
+
+            if(vida != null){
+
             }
-            if(gameObject.tag == "Burbuja" ){
+            
+            if(gameObject.tag == "Burbuja" && burnCounter >= 100){
                 // es hora de burbujear (explosion burbuja!!!) - el goblin burbuja
                 BurbujaExplosionArea burbujaExplosionArea = GetComponent<BurbujaExplosionArea>();
 
