@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: -2297033239310206050}
   - component: {fileID: -8796693419178230947}
   - component: {fileID: 5919838600120310053}
-  - component: {fileID: -3812371093254986422}
   - component: {fileID: 5390516617066734348}
   m_Layer: 2
   m_Name: Burbuja
@@ -164,23 +163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnCounter: 0
+  efectoExplosionBurbuja: {fileID: 7715213001571057987, guid: 3ec2824df83b33a4d944a6b81987c3db, type: 3}
   recoverySpeed: 0.5
   isRecovery: 0
   burnSpeed: 4
---- !u!114 &-3812371093254986422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2203827052148040794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecfd0c48b382ec7438daa8f27d1e4022, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionDamage: 200
-  efectoExplosionBurbuja: {fileID: 7715213001571057987, guid: 3ec2824df83b33a4d944a6b81987c3db, type: 3}
 --- !u!54 &5390516617066734348
 Rigidbody:
   m_ObjectHideFlags: 0
