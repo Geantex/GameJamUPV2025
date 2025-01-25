@@ -732,7 +732,7 @@ MonoBehaviour:
   puntoDeDisparo: {fileID: 8176918347877487652}
   cilindroPrefab: {fileID: 7997626716695144911, guid: 0cb950b0d3f0c684b94ae19fd27bfe77, type: 3}
   camaraPrincipal: {fileID: 5411264446756615448}
-  velocidadLaser: 50
+  velocidadLaser: 100
   grosorInicial: 0.2
   velocidadCambioGrosor: 2
   colorLaser: {r: 0, g: 0.8089442, b: 1, a: 1}
