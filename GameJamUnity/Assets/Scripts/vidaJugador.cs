@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement; // Necesario para cambiar de escena
 
 public class VidaJugador : MonoBehaviour
 {
-    // Vida máxima del jugador
+    // Vida mï¿½xima del jugador
     private const int vidaMaxima = 100;
     // Vida actual del jugador
     private int vidaActual;
@@ -37,7 +37,6 @@ public class VidaJugador : MonoBehaviour
         vidaActual -= cantidad;
         vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
 
-        Debug.Log("Vida actual del jugador: " + vidaActual);
 
         // Actualizar el texto en el Canvas
         ActualizarTextoVida();
@@ -60,7 +59,7 @@ public class VidaJugador : MonoBehaviour
         // Mostrar mensaje en consola al morir
         Debug.Log("El jugador ha muerto.");
 
-        // Puedes añadir lógica adicional aquí, como reiniciar el nivel o mostrar un menú de derrota
+        // Puedes aï¿½adir lï¿½gica adicional aquï¿½, como reiniciar el nivel o mostrar un menï¿½ de derrota
         // Cambiar a la escena de muerte
         SceneManager.LoadScene("muerte");
     }

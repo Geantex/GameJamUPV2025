@@ -145,7 +145,7 @@ public class SerCalcinadoPorLaser : MonoBehaviour
     }
 
     public void BubbleBlast(){
-        Debug.Log("Voy a explotar - el goblin suicida");
+        //Debug.Log("Voy a explotar - el goblin suicida");
         // es hora de burbujear (explosion burbuja!!!) - el goblin burbuja
         GameObject explosionBurbuja = Instantiate(efectoExplosionBurbuja, transform.position, Quaternion.identity);
         BurbujaExplosionArea explosionArea = explosionBurbuja.GetComponent<BurbujaExplosionArea>();
