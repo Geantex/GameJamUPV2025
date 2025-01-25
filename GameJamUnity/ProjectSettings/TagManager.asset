@@ -8,6 +8,7 @@ TagManager:
   - Burbuja
   - laser
   - BurbujaBlast
+  - GameManager
   layers:
   - Default
   - TransparentFX

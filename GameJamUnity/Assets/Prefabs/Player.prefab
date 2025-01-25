@@ -703,6 +703,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc07cee85757c564f92649c732d5014a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recoilStrength: 0.25
+  recoilTime: 0.02
+  returnTime: 0.05
+  recoilDirection: {x: -0, y: -0, z: -1}
 --- !u!114 &1624656524246083651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,7 +757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerFrame: 0
-  burnPerFrame: 1
+  burnPerFrame: 5
   extraDamageOnBurned: 100
   efectoDeMuerte: {fileID: 540372716887097068, guid: 4f6a50b80a3b37e458ef8285b1f91afe, type: 3}
 --- !u!4 &7876217706471989679 stripped

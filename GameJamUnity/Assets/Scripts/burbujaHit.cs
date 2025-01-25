@@ -22,6 +22,8 @@ public class burbujaHit : MonoBehaviour
             Enemigo enemigoScript = other.GetComponentInParent<Enemigo>();
             if (enemigoScript != null)
             {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
+
                 enemigoScript.Muerte();
             }
             else
@@ -30,7 +32,6 @@ public class burbujaHit : MonoBehaviour
             }
 
             // Suma monedas al jugador
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
         }
         Destroy(gameObject);
     }
