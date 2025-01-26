@@ -1211,7 +1211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6689143984554297072, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_Name
-      value: CasaVidaExtra
+      value: CasaSinCooldown
       objectReference: {fileID: 0}
     - target: {fileID: 6753779387588630023, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1292,7 +1292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6689143984554297072, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_Name
-      value: CasaPompasGrandes
+      value: CasaVidaExtra
       objectReference: {fileID: 0}
     - target: {fileID: 6753779387588630023, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2808,7 +2808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6689143984554297072, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_Name
-      value: CasaSinCooldown
+      value: CasaPocoCooldown
       objectReference: {fileID: 0}
     - target: {fileID: 6753779387588630023, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3080,8 +3080,8 @@ SceneRoots:
   - {fileID: 1500066775}
   - {fileID: 2131406991}
   - {fileID: 187983191}
-  - {fileID: 827583407}
   - {fileID: 725340501}
+  - {fileID: 827583407}
   - {fileID: 722268273}
   - {fileID: 1156822450}
   - {fileID: 1602099739}
