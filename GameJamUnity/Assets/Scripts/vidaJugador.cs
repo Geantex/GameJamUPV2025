@@ -36,7 +36,7 @@ public class VidaJugador : MonoBehaviour
         }
     }
 
-    private void RestarVida(int cantidad)
+    public void RestarVida(int cantidad)
     {
         // Reducir la vida y asegurarse de que no sea menor a 0
         vidaActual -= cantidad;

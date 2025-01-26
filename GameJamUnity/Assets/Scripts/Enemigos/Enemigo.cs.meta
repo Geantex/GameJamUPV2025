@@ -3,7 +3,10 @@ guid: 221745af3a4a55f4aa584342d900cd44
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - efectoDeMuerte: {instanceID: 0}
+  - administradorAudio: {instanceID: 0}
+  - cigarro: {fileID: 173880037255346935, guid: 08753ffcb2a0ff44e9015b50239fac65, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

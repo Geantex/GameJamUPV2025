@@ -10,7 +10,6 @@ public class Vida : MonoBehaviour
     private int vidaActual;
     //[Header("Configuración Sonidos")]
     //[SerializeField] public AdministradorAudio administradorAudio;
-
     void Start()
     {
         //administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
@@ -54,7 +53,8 @@ public class Vida : MonoBehaviour
         }*/
 
         // Cambiar a la escena de muerte
-
+        
+        
         Destroy(gameObject);
         Destroy(instanciaEfectoDeMuerte, 3f);
     }

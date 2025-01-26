@@ -12,6 +12,7 @@ TagManager:
   - administradorAudio
   - administradorAudio1
   - administradorAudio3
+  - Heal
   layers:
   - Default
   - TransparentFX
