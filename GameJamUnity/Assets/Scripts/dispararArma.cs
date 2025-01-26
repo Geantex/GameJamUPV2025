@@ -22,7 +22,7 @@ public class dispararArma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             DispararBurbuja();
         }
@@ -53,6 +53,7 @@ public class dispararArma : MonoBehaviour
         }
         GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
         cooldownBurbuja.Cooldown();
+        GetComponent<girar_municion>().BoostSpeed();
         administradorAudio.ReproducirSonidoDisparoBurbuja();
         Destroy(burbuja, 15f);
         disparoMover();

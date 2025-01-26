@@ -66,7 +66,7 @@ public class CooldownBurbuja : MonoBehaviour
         while (elapsedTime < 0.1f)
         {
             elapsedTime += Time.deltaTime;
-            tempMaterial.color = Color.Lerp(targetColor, originalColor, elapsedTime / 0.1f);
+            tempMaterial.color = Color.Lerp(targetColor, originalColor, elapsedTime / 0.15f);
             gunPart.GetComponent<Renderer>().material = tempMaterial;
             yield return null;
         }
