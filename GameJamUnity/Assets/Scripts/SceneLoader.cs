@@ -5,6 +5,7 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private string sceneName; // Nombre de la escena a cargar (puedes configurarlo desde el Inspector)
     [SerializeField] private GameObject panelCerrar; // Panel que se muestra antes de cerrar el juego
+    public AdministradorAudio administradorAudio;
 
     // Método público para cargar una escena asignada
     public void LoadScene()
@@ -12,6 +13,7 @@ public class SceneLoader : MonoBehaviour
         if (!string.IsNullOrEmpty(sceneName))
         {
             SceneManager.LoadScene(sceneName);
+            
         }
         else
         {

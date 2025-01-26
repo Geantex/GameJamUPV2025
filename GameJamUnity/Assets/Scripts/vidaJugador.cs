@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro; // Necesario para TextMeshPro
 using UnityEngine.SceneManagement; // Necesario para cambiar de escena
 
 public class VidaJugador : MonoBehaviour
@@ -10,7 +10,7 @@ public class VidaJugador : MonoBehaviour
     private int vidaActual;
 
     // Referencia al texto del Canvas
-    public Text vidaText;
+    public TMP_Text vidaText;
 
     void Start()
     {
@@ -51,7 +51,8 @@ public class VidaJugador : MonoBehaviour
     private void ActualizarTextoVida()
     {
         // Actualizar el texto en el Canvas con la vida actual
-        if (vidaText != null){
+        if (vidaText != null)
+        {
             vidaText.text = "Vida: " + vidaActual;
         }
     }

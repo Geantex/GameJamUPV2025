@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8cfb6587f2b62dd499037b5ce816cb16, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.30565625, g: 0.32294464, b: 0.32182246, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -269,8 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802616cba50d0b347a3e46e801dae268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MapaBellus
+  sceneName: charlaTortosa
   panelCerrar: {fileID: 0}
+  administradorAudio: {fileID: 0}
 --- !u!1 &38392461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: MapaBellus
   panelCerrar: {fileID: 38392461}
+  administradorAudio: {fileID: 0}
 --- !u!114 &1293947945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,7 +1272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64801492c09549c40a2c9244851e37ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.62
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64801492c09549c40a2c9244851e37ba, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1676,6 +1678,63 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &6308077232977055118
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.228589
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.2459292
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.1968026
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087910976828715352, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_Name
+      value: NOTOCAR
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1686,3 +1745,4 @@ SceneRoots:
   - {fileID: 985330532}
   - {fileID: 392379383}
   - {fileID: 1723004472}
+  - {fileID: 6308077232977055118}
