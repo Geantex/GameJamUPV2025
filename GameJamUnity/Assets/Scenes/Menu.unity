@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 802616cba50d0b347a3e46e801dae268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: MapaBellus
+  sceneName: charlaTortosa
   panelCerrar: {fileID: 0}
 --- !u!1 &38392461
 GameObject:

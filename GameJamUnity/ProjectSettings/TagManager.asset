@@ -9,6 +9,8 @@ TagManager:
   - laser
   - BurbujaBlast
   - GameManager
+  - administradorAudio
+  - administradorAudio1
   layers:
   - Default
   - TransparentFX

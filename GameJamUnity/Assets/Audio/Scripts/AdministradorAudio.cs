@@ -70,6 +70,15 @@ public class AdministradorAudio : MonoBehaviour
         }
     }
 
+    public void DetenerAudio()
+    {
+        // Detener tanto los sonidos normales como los sonidos en bucle
+        if (fuenteAudio.isPlaying)
+        {
+            fuenteAudio.Stop();
+        }
+
+    }
 
     //===============================================================================================//
     //                                      SONIDOS JUGADOR                                          //
@@ -78,6 +87,11 @@ public class AdministradorAudio : MonoBehaviour
     public void ReproducirSonidoDanyoJugador()
     {
         AudioClip clip = configuracionAudio.sonido;
+        ReproducirSonido(clip);
+    }
+    public void ReproducirSonidoTortosaInicial()
+    {
+        AudioClip clip = configuracionAudio.charlaTortosa;
         ReproducirSonido(clip);
     }
 

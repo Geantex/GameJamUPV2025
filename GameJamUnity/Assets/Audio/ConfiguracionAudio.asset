@@ -13,27 +13,5 @@ MonoBehaviour:
   m_Name: ConfiguracionAudio
   m_EditorClassIdentifier: 
   volumenGlobal: 1
-  sonidoJugadorMuerte: {fileID: 0}
-  sonidoJugadorDanyo: {fileID: 8300000, guid: 9e4896067f7a2784484578a5555b0271, type: 3}
-  sonidoRisa1: {fileID: 8300000, guid: 0071aaa704cf45644bb847a0f609f886, type: 3}
-  sonidoRisa2: {fileID: 8300000, guid: 942d274b064da4644980abda5890e867, type: 3}
-  sonidoRisa3: {fileID: 8300000, guid: e2b7de15e6513a644a7c068319dc54c9, type: 3}
-  sonidoMuerte1: {fileID: 8300000, guid: 2c671ec09321ad14cbbc800e1a30b25e, type: 3}
-  sonidoMuerte2: {fileID: 8300000, guid: cdf01cb23d3cb734da8687b0a0b063c8, type: 3}
-  sonidoMuerte3: {fileID: 8300000, guid: 4cd58d5efa5595a419e2139e4a38ac6c, type: 3}
-  sonidoBici: {fileID: 8300000, guid: e63fb7b4613b6dc4f82bca531532c7bd, type: 3}
-  sonidoBici2: {fileID: 8300000, guid: 3d3b8294ac161ee46a45ac83d16768c2, type: 3}
-  sonidoBici3: {fileID: 8300000, guid: 5caf2d6243ad0044f95a428e417c707b, type: 3}
-  sonidoExplosion: {fileID: 8300000, guid: 67b4ba31e947db045aa7c17e5fc3fac0, type: 3}
-  sonidoExplosion2: {fileID: 8300000, guid: 4c13f6f886cb045488284a2d3fc81c5a, type: 3}
-  sonidoExplosion3: {fileID: 8300000, guid: 79ab3470f5a10d24985bbb0535e2d3df, type: 3}
-  sonidoBoton: {fileID: 0}
-  sonidoHechizoNormal1: {fileID: 8300000, guid: 54a7aaab918ce244f9caf3cc909e075d, type: 3}
-  sonidoHechizoNormal2: {fileID: 8300000, guid: e46274e57141cf7418edf54092624e9e, type: 3}
-  sonidoLaser1: {fileID: 8300000, guid: e6490efe8f43d5d4e8cdd41c730259c0, type: 3}
-  sonidoHechizoFuego1: {fileID: 8300000, guid: 0d660f13cdcaf7740a116870b8b7e195, type: 3}
-  sonidoHechizoHielo1: {fileID: 8300000, guid: 08dafef3676432640b73751696c58747, type: 3}
-  sonidoOveja: {fileID: 8300000, guid: 172b63586ad5fcd47abf6defb25d0285, type: 3}
-  sonidoFuegoCoche: {fileID: 8300000, guid: 41dbcd194b1bf9d41a3ced83d03811cf, type: 3}
-  sonidoPajaros: {fileID: 8300000, guid: bfc37274e838c6546896afcd7a7f7517, type: 3}
-  sonidoFumar: {fileID: 8300000, guid: 9161669c780782347925460557ac2954, type: 3}
+  sonido: {fileID: 0}
+  charlaTortosa: {fileID: 8300000, guid: 17e7277ba5c69c8489c051cb5e8e5e6b, type: 3}
