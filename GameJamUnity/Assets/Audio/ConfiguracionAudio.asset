@@ -15,3 +15,4 @@ MonoBehaviour:
   volumenGlobal: 1
   sonido: {fileID: 0}
   charlaTortosa: {fileID: 8300000, guid: 17e7277ba5c69c8489c051cb5e8e5e6b, type: 3}
+  idol: {fileID: 8300000, guid: e475ea181cf5403419601e480b7ae439, type: 3}

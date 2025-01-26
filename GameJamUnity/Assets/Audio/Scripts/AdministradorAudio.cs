@@ -95,6 +95,13 @@ public class AdministradorAudio : MonoBehaviour
         ReproducirSonido(clip);
     }
 
+    public void ReproducirSuperIdol()
+    {
+        AudioClip clip = configuracionAudio.idol;
+        ReproducirSonido(clip);
+    }
+
+
 }
 
 //=======================================================================================================================================//

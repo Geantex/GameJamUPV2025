@@ -29,6 +29,7 @@ public class ConfiguracionAudio : ScriptableObject
     [Header("Sonidos")]
     public AudioClip sonido;
     public AudioClip charlaTortosa;
+    public AudioClip idol;
 
 
 

@@ -11,6 +11,7 @@ TagManager:
   - GameManager
   - administradorAudio
   - administradorAudio1
+  - administradorAudio3
   layers:
   - Default
   - TransparentFX

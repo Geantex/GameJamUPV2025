@@ -271,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: charlaTortosa
   panelCerrar: {fileID: 0}
+  administradorAudio: {fileID: 0}
 --- !u!1 &38392461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: MapaBellus
   panelCerrar: {fileID: 38392461}
+  administradorAudio: {fileID: 0}
 --- !u!114 &1293947945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1676,6 +1678,63 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &6308077232977055118
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.228589
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.2459292
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.1968026
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974508476400854408, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8087910976828715352, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
+      propertyPath: m_Name
+      value: NOTOCAR
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8b45f116eb021f4eb93527c6ff7d77e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1686,3 +1745,4 @@ SceneRoots:
   - {fileID: 985330532}
   - {fileID: 392379383}
   - {fileID: 1723004472}
+  - {fileID: 6308077232977055118}
