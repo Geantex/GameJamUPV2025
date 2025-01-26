@@ -25,11 +25,11 @@ public class LaserMagico : MonoBehaviour
     private float distanciaActual = 0f; // Distancia progresiva del láser
     private Material laserMaterial; // Material del cilindro
 
-    //[Header("Configuración Sonidos")]
-    //[SerializeField] public AdministradorAudio administradorAudio;
+    [Header("Configuración Sonidos")]
+    [SerializeField] public AdministradorAudio administradorAudio;
     void Start()
     {
-        //administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
+        administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
 
         // Instanciar el cilindro y desactivarlo inicialmente
         laserCilindro = Instantiate(cilindroPrefab);
@@ -85,7 +85,7 @@ public class LaserMagico : MonoBehaviour
         {
             disparando = true; // Cambia el estado
 
-            /*if(administradorAudio == null){
+            if(administradorAudio == null){
                 Debug.Log("Te tengo bastardO!");
                 administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
             }
@@ -93,9 +93,8 @@ public class LaserMagico : MonoBehaviour
             // Reproducir el sonido del láser inicial
             if (administradorAudio != null)
             {
-                administradorAudio.ReproducirSonidoLaserInicio();
-                StartCoroutine(EsperarYReproducirLoop(administradorAudio.configuracionAudio.laserInicio.length-0.2f));
-            }*/
+                administradorAudio.ReproducirSonidoDisparoLaser();
+            }
 
             if (reducirGrosorCoroutine != null)
             {
@@ -106,14 +105,6 @@ public class LaserMagico : MonoBehaviour
         }
     }
 
-    // Coroutine para esperar y reproducir el loop
-    private IEnumerator EsperarYReproducirLoop(float duracionInicial)
-    {
-        yield return new WaitForSeconds(duracionInicial); // Espera el tiempo que dura el sonido inicial
-        if(disparando == true){
-            //administradorAudio.ReproducirSonidoLaserLoop();  // Inicia el loop
-        }
-    }
 
 
     private void OnDejarDeDisparar()
@@ -123,11 +114,11 @@ public class LaserMagico : MonoBehaviour
             disparando = false; // Cambia el estado
 
             // Detener el sonido del láser en loop
-            /*if (administradorAudio != null)
+            if (administradorAudio != null)
             {
                 Debug.Log("Dejar Disparar Laser");
-                administradorAudio.DetenerSonidoLaser();
-            } */
+                administradorAudio.DetenerSonidoDisparoLaser();
+            }
 
             if (particulasCoroutine != null)
             {

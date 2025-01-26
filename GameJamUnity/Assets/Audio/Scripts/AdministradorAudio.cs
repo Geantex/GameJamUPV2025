@@ -3,8 +3,8 @@
 //  Script:
 //  AdministradorAudio
 //
-//  Descripción:
-//  Este script centraliza la reproducción de sonidos en el proyecto.
+//  Descripciï¿½n:
+//  Este script centraliza la reproducciï¿½n de sonidos en el proyecto.
 //  Maneja sonidos globales y personalizados mediante un sistema de AudioSource.
 //
 //=======================================================================================================================================//
@@ -25,7 +25,7 @@ public class AdministradorAudio : MonoBehaviour
     private AudioSource fuenteAudioLoop; // Nueva fuente para sonidos en bucle
 
     //----------------------------------------------------------------------------------------------------------------------//
-    //------------------------------------------------- MÉTODOS ------------------------------------------------------------//
+    //------------------------------------------------- Mï¿½TODOS ------------------------------------------------------------//
 
     private void Awake()
     {
@@ -105,6 +105,16 @@ public class AdministradorAudio : MonoBehaviour
     {
         AudioClip clip = configuracionAudio.burbuja;
         ReproducirSonido(clip);
+    }
+
+    public void ReproducirSonidoDisparoLaser()
+    {
+        AudioClip clip = configuracionAudio.laser;
+        ReproducirSonidoEnLoop(clip);
+    }
+    public void DetenerSonidoDisparoLaser()
+    {
+        DetenerSonidoEnLoop();
     }
 
     public void ReproducirSonidoConstruccion()

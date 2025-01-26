@@ -14,9 +14,9 @@ public class OleadaManager : MonoBehaviour
     public TextMeshProUGUI textoOleada;    // Texto para mostrar la oleada actual
     public TextMeshProUGUI textoTiempo;   // Texto para mostrar el tiempo restante (solo entre oleadas)
 
-    private int enemigosRestantes;        // Número de enemigos vivos en la oleada actual.
+    private int enemigosRestantes;        // Nï¿½mero de enemigos vivos en la oleada actual.
     private RespawnManager respawnManager;
-    private bool oleadaEnCurso = false;   // Bandera para saber si la oleada está activa.
+    private bool oleadaEnCurso = false;   // Bandera para saber si la oleada estï¿½ activa.
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class OleadaManager : MonoBehaviour
             jugador = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
-        // Aseguramos que el texto del tiempo esté inicialmente desactivado.
+        // Aseguramos que el texto del tiempo estï¿½ inicialmente desactivado.
         if (textoTiempo != null)
         {
             textoTiempo.gameObject.SetActive(false);
@@ -53,7 +53,7 @@ public class OleadaManager : MonoBehaviour
         // Recorremos las 6 oleadas definidas.
         for (int i = 0; i < enemigosPorOleada.Length; i++)
         {
-            int numeroOleada = i + 1;               // Para mostrar un número de oleada a partir de 1
+            int numeroOleada = i + 1;               // Para mostrar un nï¿½mero de oleada a partir de 1
             int enemigosEstaOleada = enemigosPorOleada[i];
 
             Debug.Log($"Oleada {numeroOleada} comenzando...");
@@ -62,7 +62,7 @@ public class OleadaManager : MonoBehaviour
             // Actualiza el texto de la oleada
             ActualizarTextoOleada(numeroOleada);
 
-            // Aseguramos que el texto del tiempo no esté visible durante la oleada.
+            // Aseguramos que el texto del tiempo no estï¿½ visible durante la oleada.
             if (textoTiempo != null)
             {
                 textoTiempo.gameObject.SetActive(false);
@@ -82,14 +82,14 @@ public class OleadaManager : MonoBehaviour
             oleadaEnCurso = false;
             Debug.Log($"Oleada {numeroOleada} completada.");
 
-            // Si no es la última oleada, mostramos el contador y esperamos.
+            // Si no es la ï¿½ltima oleada, mostramos el contador y esperamos.
             if (numeroOleada < enemigosPorOleada.Length)
             {
                 yield return StartCoroutine(EsperarConContador(tiempoEntreOleadas));
             }
         }
 
-        Debug.Log("¡Todas las oleadas completadas!");
+        Debug.Log("ï¿½Todas las oleadas completadas!");
     }
 
     // Se llama cada vez que muere un enemigo (normalmente con cambio = -1).
@@ -98,10 +98,10 @@ public class OleadaManager : MonoBehaviour
         int enemigosPrevios = enemigosRestantes;
         enemigosRestantes += cambio;
 
-        // Aviso final de oleada completada solo si la oleada está en curso y había enemigos.
+        // Aviso final de oleada completada solo si la oleada estï¿½ en curso y habï¿½a enemigos.
         if (enemigosRestantes <= 0 && enemigosPrevios > 0 && oleadaEnCurso)
         {
-            Debug.Log("¡Oleada completada!");
+            Debug.Log("ï¿½Oleada completada!");
         }
     }
 
@@ -119,20 +119,20 @@ public class OleadaManager : MonoBehaviour
         while (tiempoRestante > 0)
         {
             ActualizarTextoTiempo(tiempoRestante); // Actualiza el texto de tiempo restante
-            Debug.Log($"Tiempo restante para la próxima oleada: {tiempoRestante:F1} segundos");
+            //Debug.Log($"Tiempo restante para la prï¿½xima oleada: {tiempoRestante:F1} segundos");
             yield return new WaitForSeconds(1f);
             tiempoRestante -= 1f;
         }
 
-        ActualizarTextoTiempo(0); // Asegúrate de mostrar "0" cuando termine el contador
+        ActualizarTextoTiempo(0); // Asegï¿½rate de mostrar "0" cuando termine el contador
 
-        // Ocultamos el texto del tiempo después de la espera.
+        // Ocultamos el texto del tiempo despuï¿½s de la espera.
         if (textoTiempo != null)
         {
             textoTiempo.gameObject.SetActive(false);
         }
 
-        Debug.Log("¡Nueva oleada comenzando!");
+        Debug.Log("ï¿½Nueva oleada comenzando!");
     }
 
     // Actualiza el texto de la oleada actual
@@ -149,7 +149,7 @@ public class OleadaManager : MonoBehaviour
     {
         if (textoTiempo != null)
         {
-            textoTiempo.text = $"Tiempo para próxima oleada: {tiempoRestante:F1} s";
+            textoTiempo.text = $"Tiempo para prï¿½xima oleada: {tiempoRestante:F1} s";
         }
     }
 }
