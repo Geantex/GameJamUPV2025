@@ -101,6 +101,17 @@ public class AdministradorAudio : MonoBehaviour
         ReproducirSonido(clip);
     }
 
+    public void ReproducirSonidoDisparoBurbuja()
+    {
+        AudioClip clip = configuracionAudio.burbuja;
+        ReproducirSonido(clip);
+    }
+
+    public void ReproducirSonidoConstruccion()
+    {
+        AudioClip clip = configuracionAudio.construccion;
+        ReproducirSonido(clip);
+    }
 
 }
 
