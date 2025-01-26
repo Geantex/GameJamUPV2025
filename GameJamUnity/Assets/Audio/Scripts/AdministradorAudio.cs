@@ -151,6 +151,25 @@ public class AdministradorAudio : MonoBehaviour
         ReproducirSonido(clipSeleccionado);
     }
 
+    public void ReproducirSonidoRandomAparicionEnemigos()
+    {
+        // Crear un arreglo de AudioClip con los sonidos disponibles
+        AudioClip[] clips = new AudioClip[]
+        {
+        configuracionAudio.aparicionEnemigo1,
+        configuracionAudio.aparicionEnemigo2,
+        configuracionAudio.aparicionEnemigo3,
+        configuracionAudio.aparicionEnemigo4
+        };
+
+        // Seleccionar un sonido aleatorio
+        int indexRandom = Random.Range(0, clips.Length);
+        AudioClip clipSeleccionado = clips[indexRandom];
+
+        // Reproducir el sonido seleccionado
+        ReproducirSonido(clipSeleccionado);
+    }
+
 
 }
 

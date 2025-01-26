@@ -16,3 +16,20 @@ MonoBehaviour:
   sonido: {fileID: 0}
   charlaTortosa: {fileID: 8300000, guid: 17e7277ba5c69c8489c051cb5e8e5e6b, type: 3}
   idol: {fileID: 8300000, guid: e475ea181cf5403419601e480b7ae439, type: 3}
+  tortosa1: {fileID: 8300000, guid: 92e44fc5c1e53e34da061878bcb56844, type: 3}
+  tortosa2: {fileID: 8300000, guid: 6f1034cb00e87f44c8f595e0053f8372, type: 3}
+  tortosa3: {fileID: 8300000, guid: d4155c5315c4097439b1556412f7c41e, type: 3}
+  burbuja: {fileID: 8300000, guid: 0243f3fd70bee2e46ada2a6500925cad, type: 3}
+  laser: {fileID: 0}
+  danyoJugador: {fileID: 0}
+  danyoEnemigo: {fileID: 0}
+  muerteJugador: {fileID: 0}
+  muerteEnemigo1: {fileID: 8300000, guid: 0d153f2d519e77e4086d7969cb85076b, type: 3}
+  muerteEnemigo2: {fileID: 8300000, guid: 56a1c6e45edf67d4a874ae48985386f2, type: 3}
+  muerteEnemigo3: {fileID: 8300000, guid: 23cecbea58904cc4d8d1fffbcaa07631, type: 3}
+  muerteEnemigo4: {fileID: 8300000, guid: bb303a0a2aa0ede46a17edfe2cb3590f, type: 3}
+  construccion: {fileID: 8300000, guid: 55955fce6fcda684688e112d82fce910, type: 3}
+  aparicionEnemigo1: {fileID: 8300000, guid: e13a9af664b876a45b5dac100cfa1329, type: 3}
+  aparicionEnemigo2: {fileID: 8300000, guid: e1b16a6a6cd5364408f76b54878cee1c, type: 3}
+  aparicionEnemigo3: {fileID: 8300000, guid: ff01fa17243fa884da883b80110e5c89, type: 3}
+  aparicionEnemigo4: {fileID: 8300000, guid: 6efc15a1db067f342aed26929f85a586, type: 3}

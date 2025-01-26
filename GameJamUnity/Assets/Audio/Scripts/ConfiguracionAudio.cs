@@ -48,6 +48,11 @@ public class ConfiguracionAudio : ScriptableObject
 
     public AudioClip construccion;
 
+    public AudioClip aparicionEnemigo1;
+    public AudioClip aparicionEnemigo2;
+    public AudioClip aparicionEnemigo3;
+    public AudioClip aparicionEnemigo4;
+
 
 
 

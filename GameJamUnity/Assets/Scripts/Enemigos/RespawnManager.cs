@@ -10,6 +10,7 @@ public class RespawnManager : MonoBehaviour
     public float distanciaMaximaJugador = 30f;
     public int enemigosCercanosMax = 5;
 
+
     private List<GameObject> enemigosActivos = new List<GameObject>();
 
     public IEnumerator SpawnOleada(int cantidadEnemigos, Transform jugador, System.Action<int> callbackEnemigos)
@@ -22,6 +23,7 @@ public class RespawnManager : MonoBehaviour
             {
                 Vector3 spawnPos = GenerarPosicionSpawn(jugador.position);
                 GameObject enemigo = Instantiate(enemigoPrefab, spawnPos, Quaternion.identity);
+                
 
                 if (enemigo != null)
                 {
