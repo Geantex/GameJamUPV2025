@@ -12,8 +12,13 @@ public class VidaJugador : MonoBehaviour
     // Referencia al texto del Canvas
     public TMP_Text vidaText;
 
+    public AdministradorAudio administradorAudio;
+
+  
+
     void Start()
     {
+        administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
         // Inicializar la vida del jugador
         vidaActual = vidaMaxima;
 
@@ -60,6 +65,7 @@ public class VidaJugador : MonoBehaviour
     private void MuerteJugador()
     {
         // Mostrar mensaje en consola al morir
+        administradorAudio.ReproducirSonidoRandomMuerteEnemigos();
         Debug.Log("El jugador ha muerto.");
 
         // Puedes a�adir l�gica adicional aqu�, como reiniciar el nivel o mostrar un men� de derrota
