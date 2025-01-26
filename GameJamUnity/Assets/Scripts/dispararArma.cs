@@ -8,19 +8,21 @@ public class dispararArma : MonoBehaviour
     [SerializeField] private Transform puntoDeDisparo;
     [SerializeField] private Camera camaraPrincipal;
     public AdministradorAudio administradorAudio;
-
+    private CooldownBurbuja cooldownBurbuja;
     private void Start()
     {
         administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
+        cooldownBurbuja = GetComponent<CooldownBurbuja>();
     }
     //hola soy yo el goblin que anima aqui esta el animador jijiji!
+
 
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             DispararBurbuja();
         }
@@ -28,6 +30,7 @@ public class dispararArma : MonoBehaviour
 
     private void DispararBurbuja()
     {
+        if (cooldownBurbuja.isCoolingDown) return;
         // Crear un Ray desde el centro de la cámara
         Ray ray = camaraPrincipal.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
@@ -49,6 +52,8 @@ public class dispararArma : MonoBehaviour
             rotacionDisparo = Quaternion.LookRotation(direccionDisparo);
         }
         GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
+        cooldownBurbuja.Cooldown();
+        GetComponent<girar_municion>().BoostSpeed();
         administradorAudio.ReproducirSonidoDisparoBurbuja();
         Destroy(burbuja, 15f);
         disparoMover();

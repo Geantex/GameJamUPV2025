@@ -45,12 +45,12 @@ public class girar_municion : MonoBehaviour
 
         // Gira el objeto continuamente en el eje Z
         cilindroGiratorio.transform.Rotate(Vector3.forward * currentSpeed * Time.deltaTime);
-
+        /*
         // Simula un boost al presionar la tecla Espacio
         if (Input.GetMouseButtonDown(0)) // 0 es el bot�n izquierdo del mouse
         {
             BoostSpeed();
-        }
+        }*/
     }
     public void BoostSpeed()
     {
