@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.07
       objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: costeCompra
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.51
@@ -762,6 +766,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.07
       objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: costeCompra
+      value: 3999
+      objectReference: {fileID: 0}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.82
@@ -835,6 +843,10 @@ PrefabInstance:
     - target: {fileID: 6753779387588630023, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: costeCompra
+      value: 2499
       objectReference: {fileID: 0}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1461,6 +1473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casa
       objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: costeCompra
+      value: 399
+      objectReference: {fileID: 0}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.833324
@@ -2059,6 +2075,10 @@ PrefabInstance:
     - target: {fileID: 6753779387588630023, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: costeCompra
+      value: 899
       objectReference: {fileID: 0}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
