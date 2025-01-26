@@ -297,6 +297,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1971258156}
+    - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1191890837}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
 --- !u!4 &278011227 stripped
@@ -361,6 +364,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6051efb5bb9b6464fb416c1930908730, type: 3}
+--- !u!1 &346545648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 346545649}
+  - component: {fileID: 346545651}
+  - component: {fileID: 346545650}
+  m_Layer: 0
+  m_Name: CajaDeMuerte (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &346545649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346545648}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.686789, z: -0, w: 0.7268569}
+  m_LocalPosition: {x: -10.950333, y: 0.11799997, z: -1.6452165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1986909067}
+  m_LocalEulerAnglesHint: {x: 0, y: 86.753, z: 0}
+--- !u!114 &346545650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346545648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5452206434666438ce35e138565182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &346545651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346545648}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.8294883, y: 1, z: 6.08485}
+  m_Center: {x: -0.5764661, y: 0, z: 1.7103727}
 --- !u!1001 &399860285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -817,6 +886,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1721370633}
+    - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1325727284}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
 --- !u!4 &741607389 stripped
@@ -895,6 +967,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       insertIndex: -1
       addedObject: {fileID: 997932952}
+    - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1468139104}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
 --- !u!1001 &887005196
@@ -1169,6 +1244,72 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1191890836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191890837}
+  - component: {fileID: 1191890839}
+  - component: {fileID: 1191890838}
+  m_Layer: 0
+  m_Name: CajaDeMuerte (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1191890837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191890836}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6716408, z: -0, w: 0.740877}
+  m_LocalPosition: {x: -11.613, y: 0.116, z: -0.857}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 488573501}
+  m_LocalEulerAnglesHint: {x: 0, y: 84.388, z: 0}
+--- !u!114 &1191890838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191890836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5452206434666438ce35e138565182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1191890839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191890836}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.0695906, y: 2.1039982, z: 8.50561}
+  m_Center: {x: 0.543571, y: 0.5519991, z: 3.7528007}
 --- !u!4 &1269166753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4d03124b627dc8841bc43d4c1e7646e7, type: 3}
@@ -1266,6 +1407,72 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1325727283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325727284}
+  - component: {fileID: 1325727286}
+  - component: {fileID: 1325727285}
+  m_Layer: 0
+  m_Name: CajaDeMuerte (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1325727284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325727283}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.699966, z: -0, w: -0.71417624}
+  m_LocalPosition: {x: -10.174, y: -0.106000006, z: 2.712}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 741607389}
+  m_LocalEulerAnglesHint: {x: 0, y: -88.849, z: 0}
+--- !u!114 &1325727285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325727283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5452206434666438ce35e138565182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1325727286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325727283}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.7389765, y: 2.0291154, z: 7.0415387}
+  m_Center: {x: -2.3694668, y: 0.5145577, z: -3.0207927}
 --- !u!4 &1414398153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6051efb5bb9b6464fb416c1930908730, type: 3}
@@ -1321,6 +1528,72 @@ MonoBehaviour:
   growTime: 0.5
   desiredSize: 6
   thoseWhoGrow: {fileID: 1450304947}
+--- !u!1 &1468139103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1468139104}
+  - component: {fileID: 1468139106}
+  - component: {fileID: 1468139105}
+  m_Layer: 0
+  m_Name: CajaDeMuerte (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1468139104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468139103}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6807273, z: -0, w: -0.7325369}
+  m_LocalPosition: {x: -11.371, y: 0.167, z: 0.62}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 278011227}
+  m_LocalEulerAnglesHint: {x: 0, y: -85.801, z: 0}
+--- !u!114 &1468139105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468139103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5452206434666438ce35e138565182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1468139106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468139103}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.562088, y: 1.9733527, z: 8.092663}
+  m_Center: {x: 0.2898104, y: 0.48667634, z: -3.5463133}
 --- !u!1 &1485828172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,6 +1797,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1450304948}
+    - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1856302236}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
 --- !u!1001 &1602099739
@@ -1735,6 +2011,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d03124b627dc8841bc43d4c1e7646e7, type: 3}
+--- !u!1 &1856302233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1856302236}
+  - component: {fileID: 1856302235}
+  - component: {fileID: 1856302237}
+  m_Layer: 0
+  m_Name: CajaDeMuerte
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1856302235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856302233}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.070551, y: 2.6133175, z: 7.2392454}
+  m_Center: {x: -1.5749668, y: 0.80665874, z: 0.23163603}
+--- !u!4 &1856302236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856302233}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.046497952, z: -0, w: 0.9989184}
+  m_LocalPosition: {x: -5.021061, y: 0.03999996, z: 0.10153532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 524419386}
+  m_LocalEulerAnglesHint: {x: 0, y: 5.33, z: 0}
+--- !u!114 &1856302237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856302233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5452206434666438ce35e138565182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1900852150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2127,6 +2469,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1427464243}
+    - targetCorrespondingSourceObject: {fileID: 6770830174157852315, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 346545649}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
 --- !u!1 &2133670477
