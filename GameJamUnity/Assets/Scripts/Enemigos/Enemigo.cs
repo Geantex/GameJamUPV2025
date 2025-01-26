@@ -14,6 +14,7 @@ public class Enemigo : MonoBehaviour
     private void Start()
     {
         administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
+        administradorAudio.ReproducirSonidoRandomAparicionEnemigos();
     }
 
     private void OnCollisionEnter(Collision collision)
