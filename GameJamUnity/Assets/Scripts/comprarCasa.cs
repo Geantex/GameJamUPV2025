@@ -98,7 +98,7 @@ public class apareceCasa : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Player").GetComponent<reliquiasEquipadas>().setEsprintar(true);
                 string titulo = "Correr";
                 string descripcion = "Ahora puedes correr con SHIFT";
-
+                
                 break;
             case "CasaPocoCooldown":
                 GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CooldownBurbuja>().cooldownTime -= 0.35f;
