@@ -96,18 +96,29 @@ public class apareceCasa : MonoBehaviour
         switch(nombreCasa){
             case "CasaCorrer":
                 GameObject.FindGameObjectWithTag("Player").GetComponent<reliquiasEquipadas>().setEsprintar(true);
+                string titulo = "Correr";
+                string descripcion = "Ahora puedes correr con SHIFT";
+
                 break;
-            case "CasaSinCooldown":
-                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CooldownBurbuja>().cooldownTime = 0.15f;
+            case "CasaPocoCooldown":
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CooldownBurbuja>().cooldownTime -= 0.35f;
+                string titulo = "Jabon de burbujas mejorado";
+                string descripcion = "Cooldown reducido para disparar burbujas";
                 break;
             case "CasaLaser":
                 GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LaserMagico>().enabled = true;
+                string titulo = "Laser de jabon";
+                string descripcion = "Click derecho. ¡Dispara a las burbujas para un combo!";                
                 break;
-            case "CasaPompasGrandes":
-                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CooldownBurbuja>().cooldownTime = 0;
+            case "CasaSinCooldown":
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CooldownBurbuja>().cooldownTime = 0.05f;
+                string titulo = "Super ultra jabon Fairy";
+                string descripcion = "¡Dispara todas las burbujas que quieras!";                
                 break;
             case "CasaVidaExtra":
                 GameObject.FindGameObjectWithTag("Player").GetComponent<VidaJugador>().MejoraVida();
+                string titulo = "Vida extra";
+                string descripcion = "¡Gracias, servicios medicos de Bellus!";                
                 break;
             default:
                 Debug.LogWarning("No se encontró el nombre de la casa.");
