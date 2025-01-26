@@ -742,15 +742,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5993086941592122518, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3206561736772033540}
-    - targetCorrespondingSourceObject: {fileID: 5993086941592122518, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8809715686797888720}
   m_SourcePrefab: {fileID: 100100000, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
---- !u!1 &1218479607374580287 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7143816653671908024, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
-  m_PrefabInstance: {fileID: 8343771371229988999}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2363731261321294307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5982661381146966372, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
@@ -832,21 +824,6 @@ MonoBehaviour:
   burnPerFrame: 5
   extraDamageOnBurned: 100
   efectoDeMuerte: {fileID: 540372716887097068, guid: 4f6a50b80a3b37e458ef8285b1f91afe, type: 3}
---- !u!114 &8809715686797888720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2369103448443304977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4baedb7a750eed4eb7e8db5b7fdd3a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldownTime: 0.5
-  isCoolingDown: 0
-  gunPart: {fileID: 1218479607374580287}
 --- !u!4 &7876217706471989679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2199715522589452584, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
