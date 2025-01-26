@@ -8,20 +8,17 @@ public class dispararArma : MonoBehaviour
     [SerializeField] private Transform puntoDeDisparo;
     [SerializeField] private Camera camaraPrincipal;
     public AdministradorAudio administradorAudio;
-
+    private CooldownBurbuja cooldownBurbuja;
     private void Start()
     {
         administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
+        cooldownBurbuja = GetComponent<CooldownBurbuja>();
     }
     //hola soy yo el goblin que anima aqui esta el animador jijiji!
 
-    private CooldownBurbuja cooldownBurbuja;
 
- 
 
-    void Start(){
-        cooldownBurbuja = GetComponent<CooldownBurbuja>();
-    }
+
     // Update is called once per frame
     void Update()
     {
