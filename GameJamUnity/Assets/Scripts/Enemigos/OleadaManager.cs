@@ -149,7 +149,7 @@ public class OleadaManager : MonoBehaviour
     {
         if (textoTiempo != null)
         {
-            textoTiempo.text = $"Tiempo para pr�xima oleada: {tiempoRestante:F1} s";
+            textoTiempo.text = $"Tiempo para próxima oleada: {tiempoRestante:F1} s";
         }
     }
 }
