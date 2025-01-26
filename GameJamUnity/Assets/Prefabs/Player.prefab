@@ -252,8 +252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6911eb86b120bf14f8c87fd7ed6c994a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  sprintMultiplier: 2
+  speed: 4
+  sprintMultiplier: 1.4
   jumpForce: 8
   mouseSensitivity: 800
   gravity: -20
@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMoney: 0
+  moneyText: {fileID: 0}
 --- !u!114 &2521202492510604094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saltoAereo: 0
-  esprintar: 1
+  esprintar: 0
 --- !u!114 &3442973567356461250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaText: {fileID: 0}
+  administradorAudio: {fileID: 0}
 --- !u!1001 &8343771371229988999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -790,6 +792,7 @@ MonoBehaviour:
   burbujaPrefab: {fileID: 2203827052148040794, guid: 721e23d5b313d394cb3d54cefd917589, type: 3}
   puntoDeDisparo: {fileID: 8176918347877487652}
   camaraPrincipal: {fileID: 5411264446756615448}
+  administradorAudio: {fileID: 0}
 --- !u!114 &4426816034116850828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,6 +815,7 @@ MonoBehaviour:
   velocidadSeno: 15
   amplitudSenoGrosor: 0.02
   amplitudSenoColor: 0.1
+  administradorAudio: {fileID: 0}
 --- !u!114 &3206561736772033540
 MonoBehaviour:
   m_ObjectHideFlags: 0

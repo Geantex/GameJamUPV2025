@@ -20,7 +20,7 @@ MonoBehaviour:
   tortosa2: {fileID: 8300000, guid: 6f1034cb00e87f44c8f595e0053f8372, type: 3}
   tortosa3: {fileID: 8300000, guid: d4155c5315c4097439b1556412f7c41e, type: 3}
   burbuja: {fileID: 8300000, guid: 0243f3fd70bee2e46ada2a6500925cad, type: 3}
-  laser: {fileID: 0}
+  laser: {fileID: 8300000, guid: 8aa448b3562f9db459d7fa6c9a703a12, type: 3}
   danyoJugador: {fileID: 0}
   danyoEnemigo: {fileID: 0}
   muerteJugador: {fileID: 0}
