@@ -10,8 +10,13 @@ public class dispararArma : MonoBehaviour
 
     //hola soy yo el goblin que anima aqui esta el animador jijiji!
 
+    private CooldownBurbuja cooldownBurbuja;
+
  
 
+    void Start(){
+        cooldownBurbuja = GetComponent<CooldownBurbuja>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +28,7 @@ public class dispararArma : MonoBehaviour
 
     private void DispararBurbuja()
     {
+        if (cooldownBurbuja.isCoolingDown) return;
         // Crear un Ray desde el centro de la cámara
         Ray ray = camaraPrincipal.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
@@ -44,6 +50,7 @@ public class dispararArma : MonoBehaviour
             rotacionDisparo = Quaternion.LookRotation(direccionDisparo);
         }
         GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
+        cooldownBurbuja.Cooldown();
         Destroy(burbuja, 15f);
         disparoMover();
 
