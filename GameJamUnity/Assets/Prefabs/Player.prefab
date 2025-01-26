@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8176918347877487652}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: puntoDisparo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -337,6 +337,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2716317363955405233}
     m_Modifications:
+    - target: {fileID: 107718053371940016, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 258481210338677910, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       propertyPath: NoiseModule.enabled
       value: 1
@@ -378,6 +386,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       propertyPath: NoiseModule.scrollSpeed.scalar
       value: 0
       objectReference: {fileID: 0}
@@ -386,12 +398,36 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       propertyPath: InheritVelocityModule.m_Curve.scalar
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: InitialModule.startSpeed.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1333160775536279360, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       propertyPath: VelocityModule.speedModifier.minMaxState
@@ -561,6 +597,10 @@ PrefabInstance:
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minCurve.m_Curve.Array.data[1].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1783297261570157126, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1807782715651005322, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.69
@@ -625,6 +665,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3565965139768982948, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836952388274482676, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5982661381146966372, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.69
@@ -657,6 +705,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: arma
       objectReference: {fileID: 0}
+    - target: {fileID: 5993086941592122518, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6284815286742651682, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143816653671908024, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8374640912015518812, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       propertyPath: boostedEmissionRate
       value: 50
@@ -680,7 +740,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5993086941592122518, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3206561736772033540}
+    - targetCorrespondingSourceObject: {fileID: 5993086941592122518, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8809715686797888720}
   m_SourcePrefab: {fileID: 100100000, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+--- !u!1 &1218479607374580287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7143816653671908024, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
+  m_PrefabInstance: {fileID: 8343771371229988999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2363731261321294307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5982661381146966372, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}
@@ -737,7 +805,7 @@ MonoBehaviour:
   puntoDeDisparo: {fileID: 8176918347877487652}
   cilindroPrefab: {fileID: 7997626716695144911, guid: 0cb950b0d3f0c684b94ae19fd27bfe77, type: 3}
   camaraPrincipal: {fileID: 5411264446756615448}
-  velocidadLaser: 100
+  velocidadLaser: 200
   grosorInicial: 0.2
   velocidadCambioGrosor: 2
   colorLaser: {r: 0, g: 0.8089442, b: 1, a: 1}
@@ -760,6 +828,21 @@ MonoBehaviour:
   burnPerFrame: 5
   extraDamageOnBurned: 100
   efectoDeMuerte: {fileID: 540372716887097068, guid: 4f6a50b80a3b37e458ef8285b1f91afe, type: 3}
+--- !u!114 &8809715686797888720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2369103448443304977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4baedb7a750eed4eb7e8db5b7fdd3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownTime: 0.5
+  isCoolingDown: 0
+  gunPart: {fileID: 1218479607374580287}
 --- !u!4 &7876217706471989679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2199715522589452584, guid: d67f2483b68bb9e4cb08c12a1c78c72a, type: 3}

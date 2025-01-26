@@ -6,7 +6,6 @@ public class BurbujaExplosionArea : MonoBehaviour
 {
     public int explosionDamage = 200; // Fuerza de la explosión
     [SerializeField] private SphereCollider explosionCollider; // Collider de la explosión
-    [SerializeField] private bool explosionEnCadena = false;
 
 
     private void OnTriggerEnter(Collider other){
@@ -27,11 +26,6 @@ public class BurbujaExplosionArea : MonoBehaviour
             // Suma monedas al jugador
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
         }
-        /*if (other.gameObject.CompareTag("Burbuja") && explosionEnCadena)
-        {
-            SerCalcinadoPorLaser burbujaCadena = other.GetComponent<SerCalcinadoPorLaser>();
-            burbujaCadena.BubbleBlast();
-        }*/
     }
 
 
