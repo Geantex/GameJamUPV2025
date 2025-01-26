@@ -250,6 +250,10 @@ PrefabInstance:
       propertyPath: costeCompra
       value: 1500
       objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: textomejora
+      value: 
+      objectReference: {fileID: 1682377599}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.51
@@ -1221,6 +1225,10 @@ PrefabInstance:
       propertyPath: costeCompra
       value: 3999
       objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: textomejora
+      value: 
+      objectReference: {fileID: 1682377599}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.82
@@ -1302,6 +1310,10 @@ PrefabInstance:
       propertyPath: costeCompra
       value: 2499
       objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: textomejora
+      value: 
+      objectReference: {fileID: 1682377599}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.3531542
@@ -2135,6 +2147,10 @@ PrefabInstance:
       propertyPath: costeCompra
       value: 399
       objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: textomejora
+      value: 
+      objectReference: {fileID: 1682377599}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.833324
@@ -2281,7 +2297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1682377598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2298,8 +2314,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 233.6, y: 84}
-  m_SizeDelta: {x: 467.2, y: 50}
+  m_AnchoredPosition: {x: 342.05, y: 138}
+  m_SizeDelta: {x: 684.1, y: 76.4}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1682377599
 MonoBehaviour:
@@ -2955,6 +2971,10 @@ PrefabInstance:
       propertyPath: costeCompra
       value: 899
       objectReference: {fileID: 0}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: textomejora
+      value: 
+      objectReference: {fileID: 1682377599}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.90827

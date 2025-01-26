@@ -1,16 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Necesario para cambiar de escena
-using UnityEngine.UI;
 using TMPro;
 
 public class apareceCasa : MonoBehaviour
 {
     [SerializeField]
-    public int costeCompra = 100;  // Ajusta en el Inspector el costo de la casa
-    private GameObject casaModelo;  // Referencia al objeto CasaModelo
+    public int costeCompra = 100; // Ajusta en el Inspector el costo de la casa
+    private GameObject casaModelo; // Referencia al objeto CasaModelo
     public AdministradorAudio administradorAudio;
-    public TextMeshProUGUI textomejora;    // Texto para mostrar la oleada actual
-    public float tiempoMostrarTexto = 3f; // Tiempo que el texto estará visible (en segundos)
+    public TextMeshProUGUI textomejora; // Texto para mostrar la mejora
+    public float tiempoMostrarTexto = 5f; // Tiempo que el texto estará visible (en segundos)
 
     private void Start()
     {
@@ -33,24 +31,26 @@ public class apareceCasa : MonoBehaviour
         {
             Debug.LogError("El padre del padre del objeto no existe.");
         }
+
+        // Aseguramos que el texto de mejora esté desactivado al inicio
+        if (textomejora != null)
+        {
+            textomejora.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verificamos si el objeto que entra en el trigger tiene el tag "Player"
         if (other.CompareTag("Player"))
         {
-            // Obtenemos el script PlayerMoney del objeto que entró en el trigger
             PlayerMoney playerMoney = other.GetComponent<PlayerMoney>();
 
             if (playerMoney != null)
             {
-                // Verificamos si el jugador tiene suficiente dinero
                 if (playerMoney.CurrentMoney >= costeCompra)
                 {
                     contadorCasa contadorcasa = GameObject.FindGameObjectWithTag("GameManager").GetComponent<contadorCasa>();
 
-                    // Gastamos el dinero (opcional, si quieres que se descuente)
                     playerMoney.SpendMoney(costeCompra);
                     if (contadorcasa != null)
                     {
@@ -62,7 +62,6 @@ public class apareceCasa : MonoBehaviour
                         Debug.Log("¡Es null!");
                     }
 
-                    // Activamos el objeto CasaModelo si lo encontramos
                     if (casaModelo != null)
                     {
                         casaModelo.SetActive(true);
@@ -74,7 +73,6 @@ public class apareceCasa : MonoBehaviour
                         Debug.LogWarning("CasaModelo no fue asignado o no se encontró en la jerarquía.");
                     }
 
-                    // Desactivamos el objeto (Cylinder)
                     gameObject.SetActive(false);
                 }
                 else
@@ -91,8 +89,6 @@ public class apareceCasa : MonoBehaviour
 
     private void MejorarJugador()
     {
-        // Para saber que mejora corresponde a que casa, miraremos el nombre de la casa
-        // Para conseguir el nombre de la casa, hay que mirar el nombre del padre del padre del objeto que tenga este script
         string nombreCasa = transform.parent?.parent?.name;
         string titulo = "";
         string descripcion = "";
@@ -106,48 +102,50 @@ public class apareceCasa : MonoBehaviour
                 break;
             case "CasaPocoCooldown":
                 GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CooldownBurbuja>().cooldownTime -= 0.35f;
-                titulo = "Jabon de burbujas mejorado";
+                titulo = "Jabón de burbujas mejorado";
                 descripcion = "Cooldown reducido para disparar burbujas";
                 break;
             case "CasaLaser":
                 GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LaserMagico>().enabled = true;
-                titulo = "Laser de jabon";
+                titulo = "Láser de jabón";
                 descripcion = "Click derecho. ¡Dispara a las burbujas para un combo!";
                 break;
             case "CasaSinCooldown":
                 GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CooldownBurbuja>().cooldownTime = 0.05f;
-                titulo = "Super ultra jabon Fairy";
+                titulo = "Super ultra jabón Fairy";
                 descripcion = "¡Dispara todas las burbujas que quieras!";
                 break;
             case "CasaVidaExtra":
                 GameObject.FindGameObjectWithTag("Player").GetComponent<VidaJugador>().MejoraVida();
                 titulo = "Vida extra";
-                descripcion = "¡Gracias, servicios medicos de Bellus!";
+                descripcion = "¡Gracias, servicios médicos de Bellus!";
                 break;
             default:
                 Debug.LogWarning("No se encontró el nombre de la casa.");
-                return; // Salimos si no encontramos un nombre válido
+                return;
         }
 
-        // Mostramos el texto de mejora y lo ocultamos después de un tiempo
+        MostrarTextoMejora(titulo, descripcion);
+    }
+
+    private void MostrarTextoMejora(string titulo, string descripcion)
+    {
         if (textomejora != null)
         {
-            StartCoroutine(MostrarTextoMejora(titulo, descripcion));
+            textomejora.text = $"{titulo}\n{descripcion}";
+            textomejora.gameObject.SetActive(true);
+
+            // Usamos Invoke para llamar a OcultarTexto después del tiempo especificado
+            Invoke(nameof(OcultarTextoMejora), tiempoMostrarTexto);
         }
     }
 
-    private System.Collections.IEnumerator MostrarTextoMejora(string titulo, string descripcion)
+    private void OcultarTextoMejora()
     {
-        // Concatenamos el título y la descripción en el mismo texto
-        textomejora.text = $"{titulo}\n{descripcion}";
-
-        // Activamos el texto para que sea visible
-        textomejora.gameObject.SetActive(true);
-
-        // Esperamos el tiempo definido
-        yield return new WaitForSeconds(tiempoMostrarTexto);
-
-        // Ocultamos el texto después del tiempo
-        textomejora.gameObject.SetActive(false);
+        if (textomejora != null)
+        {
+            textomejora.text = "";
+            textomejora.gameObject.SetActive(false);
+        }
     }
 }
