@@ -3,20 +3,15 @@ using UnityEngine;
 
 public class OleadaManager : MonoBehaviour
 {
-    // Puedes eliminar estas dos variables si ya no quieres generar aleatoriamente
-    // public int enemigosMinPorOleada = 5;
-    // public int enemigosMaxPorOleada = 15;
+    // Fijamos 6 oleadas con la cantidad de enemigos exacta en cada una.
+    private int[] enemigosPorOleada = { 5, 10, 20, 30, 40, 50 };
 
-    // Ahora definimos un arreglo con el número de enemigos que tendrá cada oleada.
-    // En este ejemplo tenemos 10 oleadas, pero puedes personalizarlo a tu gusto.
-    private int[] enemigosPorOleada = { 5, 8, 12, 16, 20, 25, 30, 35, 40, 50 };
-
-    public float tiempoEntreOleadas = 10f; // Tiempo de espera entre oleadas
+    public float tiempoEntreOleadas = 10f; // Tiempo de espera entre oleadas.
     public Transform jugador;
 
-    private int enemigosRestantes; // Número de enemigos vivos
+    private int enemigosRestantes;        // Número de enemigos vivos en la oleada actual.
     private RespawnManager respawnManager;
-    private bool oleadaEnCurso = false; // Bandera para controlar el estado de la oleada
+    private bool oleadaEnCurso = false;   // Bandera para saber si la oleada está activa.
 
     void Start()
     {
@@ -27,12 +22,13 @@ public class OleadaManager : MonoBehaviour
             jugador = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
+        // Iniciamos la secuencia de oleadas.
         StartCoroutine(IniciarOleadas());
     }
 
     private void Update()
     {
-        // Sincroniza el contador con los enemigos activos en caso de desincronización
+        // Sincroniza el contador con los enemigos activos, por si surge desajuste.
         int enemigosActivos = respawnManager.ObtenerEnemigosActivos();
         if (enemigosRestantes != enemigosActivos)
         {
@@ -43,10 +39,10 @@ public class OleadaManager : MonoBehaviour
 
     private IEnumerator IniciarOleadas()
     {
-        // Recorremos el arreglo de enemigosPorOleada para lanzar cada oleada
+        // Recorremos las 6 oleadas definidas.
         for (int i = 0; i < enemigosPorOleada.Length; i++)
         {
-            int numeroOleada = i + 1; // Para mostrar un número de oleada a partir de 1
+            int numeroOleada = i + 1;               // Para mostrar un número de oleada a partir de 1
             int enemigosEstaOleada = enemigosPorOleada[i];
 
             Debug.Log($"Oleada {numeroOleada} comenzando...");
@@ -54,10 +50,12 @@ public class OleadaManager : MonoBehaviour
 
             enemigosRestantes = enemigosEstaOleada;
 
-            // Lanzamos la oleada
+            // Iniciamos el spawn de la oleada; 
+            // RespawnManager.SpawnOleada deberá instanciar tantos enemigos como 'enemigosEstaOleada'
+            // y llamar a 'ActualizarEnemigosRestantes(-1)' cada vez que muera un enemigo.
             StartCoroutine(respawnManager.SpawnOleada(enemigosEstaOleada, jugador, ActualizarEnemigosRestantes));
 
-            // Esperamos a que todos los enemigos de la oleada mueran
+            // Esperamos hasta que todos los enemigos de la oleada actual mueran.
             while (enemigosRestantes > 0)
             {
                 yield return null;
@@ -66,7 +64,7 @@ public class OleadaManager : MonoBehaviour
             oleadaEnCurso = false;
             Debug.Log($"Oleada {numeroOleada} completada.");
 
-            // Si no es la última oleada, esperamos antes de lanzar la siguiente
+            // Si no es la última oleada, esperamos un tiempo antes de iniciar la siguiente.
             if (numeroOleada < enemigosPorOleada.Length)
             {
                 yield return StartCoroutine(EsperarConContador(tiempoEntreOleadas));
@@ -76,19 +74,20 @@ public class OleadaManager : MonoBehaviour
         Debug.Log("¡Todas las oleadas completadas!");
     }
 
+    // Se llama cada vez que muere un enemigo (normalmente con cambio = -1).
     public void ActualizarEnemigosRestantes(int cambio)
     {
         int enemigosPrevios = enemigosRestantes;
         enemigosRestantes += cambio;
 
-        // Solo mostramos "¡Oleada completada!" si la oleada estaba en curso y había enemigos
+        // Aviso final de oleada completada solo si la oleada está en curso y había enemigos.
         if (enemigosRestantes <= 0 && enemigosPrevios > 0 && oleadaEnCurso)
         {
             Debug.Log("¡Oleada completada!");
         }
     }
 
-    // Método para esperar mostrando un contador en el log
+    // Espera un tiempo mostrando un contador en la consola.
     private IEnumerator EsperarConContador(float tiempoEspera)
     {
         float tiempoRestante = tiempoEspera;
