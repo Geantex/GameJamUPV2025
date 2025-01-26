@@ -36,6 +36,7 @@ public class PlayerMoney : MonoBehaviour
         if (currentMoney >= amount)
         {
             currentMoney -= amount;
+            UpdateMoneyText(); // Actualizar el texto
             //Debug.Log("Se han gastado " + amount + " monedas. Total ahora: " + currentMoney);
             return true;
         }
@@ -51,6 +52,9 @@ public class PlayerMoney : MonoBehaviour
     {
         if (moneyText != null)
         {
+            Debug.Log("dentro dinero");
+            Debug.Log(currentMoney);
+
             moneyText.text = "Dinero: " + currentMoney;
         }
     }
