@@ -113,6 +113,45 @@ public class AdministradorAudio : MonoBehaviour
         ReproducirSonido(clip);
     }
 
+
+    public void ReproducirSonidoRandomTortosa()
+    {
+        // Crear un arreglo de AudioClip con los sonidos disponibles
+        AudioClip[] clips = new AudioClip[]
+        {
+        configuracionAudio.tortosa1,
+        configuracionAudio.tortosa2,
+        configuracionAudio.tortosa3
+        };
+
+        // Seleccionar un sonido aleatorio
+        int indexRandom = Random.Range(0, clips.Length);
+        AudioClip clipSeleccionado = clips[indexRandom];
+
+        // Reproducir el sonido seleccionado
+        ReproducirSonido(clipSeleccionado);
+    }
+
+    public void ReproducirSonidoRandomMuerteEnemigos()
+    {
+        // Crear un arreglo de AudioClip con los sonidos disponibles
+        AudioClip[] clips = new AudioClip[]
+        {
+        configuracionAudio.muerteEnemigo1,
+        configuracionAudio.muerteEnemigo2,
+        configuracionAudio.muerteEnemigo3,
+        configuracionAudio.muerteEnemigo4
+        };
+
+        // Seleccionar un sonido aleatorio
+        int indexRandom = Random.Range(0, clips.Length);
+        AudioClip clipSeleccionado = clips[indexRandom];
+
+        // Reproducir el sonido seleccionado
+        ReproducirSonido(clipSeleccionado);
+    }
+
+
 }
 
 //=======================================================================================================================================//

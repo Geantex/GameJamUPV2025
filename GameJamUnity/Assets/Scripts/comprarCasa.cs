@@ -6,14 +6,14 @@ public class apareceCasa : MonoBehaviour
     [SerializeField]
     public int costeCompra = 100;  // Ajusta en el Inspector el costo de la casa
     private GameObject casaModelo;  // Referencia al objeto CasaModelo
-  
+    public AdministradorAudio administradorAudio;
 
     private void Start()
     {
-        
-       
-    // Encontramos el padre del padre del objeto que tenga este script (el Cylinder)
-    Transform parentOfParent = transform.parent?.parent;
+        administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
+
+        // Encontramos el padre del padre del objeto que tenga este script (el Cylinder)
+        Transform parentOfParent = transform.parent?.parent;
 
         if (parentOfParent != null)
         {
@@ -65,6 +65,8 @@ public class apareceCasa : MonoBehaviour
                     if (casaModelo != null)
                     {
                         casaModelo.SetActive(true);
+                        administradorAudio.ReproducirSonidoRandomTortosa();
+                        administradorAudio.ReproducirSonidoConstruccion();
                     }
                     else
                     {

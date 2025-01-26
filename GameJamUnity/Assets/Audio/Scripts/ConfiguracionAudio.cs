@@ -41,7 +41,10 @@ public class ConfiguracionAudio : ScriptableObject
     public AudioClip danyoJugador;
     public AudioClip danyoEnemigo;
     public AudioClip muerteJugador;
-    public AudioClip muerteEnemigo;
+    public AudioClip muerteEnemigo1;
+    public AudioClip muerteEnemigo2;
+    public AudioClip muerteEnemigo3;
+    public AudioClip muerteEnemigo4;
 
     public AudioClip construccion;
 
