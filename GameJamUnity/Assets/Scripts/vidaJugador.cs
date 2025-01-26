@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement; // Necesario para cambiar de escena
 public class VidaJugador : MonoBehaviour
 {
     // Vida m�xima del jugador
-    private const int vidaMaxima = 100;
+    private int vidaMaxima = 100;
     // Vida actual del jugador
     private int vidaActual;
 
@@ -71,5 +71,12 @@ public class VidaJugador : MonoBehaviour
         // Puedes a�adir l�gica adicional aqu�, como reiniciar el nivel o mostrar un men� de derrota
         // Cambiar a la escena de muerte
         SceneManager.LoadScene("muerte");
+    }
+
+    public void MejoraVida(){
+        vidaMaxima += 100;
+        vidaActual = vidaMaxima;
+        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+        ActualizarTextoVida();
     }
 }

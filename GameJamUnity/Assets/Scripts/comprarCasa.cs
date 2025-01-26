@@ -54,11 +54,12 @@ public class apareceCasa : MonoBehaviour
                     if(contadorcasa != null)
                     {
                         contadorcasa.SumarContador();
+                        MejorarJugador();
 
                     }
                     else
                     {
-                        Debug.Log("¡Es null, nigga!");
+                        Debug.Log("¡Es null!");
                     }
 
                     // Activamos el objeto CasaModelo si lo encontramos
@@ -85,6 +86,32 @@ public class apareceCasa : MonoBehaviour
             {
                 Debug.LogWarning("El objeto Player no tiene el script PlayerMoney.");
             }
+        }
+    }
+
+    private void MejorarJugador(){
+        // Para saber que mejora corresponde a que casa, miraremos el nombre de la casa
+        // Para conseguir el nombre de la casa, hay que mirar el nombre del padre del padre del objeto que tenga este script
+        string nombreCasa = transform.parent?.parent?.name;
+        switch(nombreCasa){
+            case "CasaCorrer":
+                GameObject.FindGameObjectWithTag("Player").GetComponent<reliquiasEquipadas>().setEsprintar(true);
+                break;
+            case "CasaSinCooldown":
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CooldownBurbuja>().cooldownTime = 0.15f;
+                break;
+            case "CasaLaser":
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<LaserMagico>().enabled = true;
+                break;
+            case "CasaPompasGrandes":
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CooldownBurbuja>().cooldownTime = 0;
+                break;
+            case "CasaVidaExtra":
+                GameObject.FindGameObjectWithTag("Player").GetComponent<VidaJugador>().MejoraVida();
+                break;
+            default:
+                Debug.LogWarning("No se encontró el nombre de la casa.");
+                break;
         }
     }
 }

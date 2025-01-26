@@ -33,6 +33,7 @@ public class CooldownBurbuja : MonoBehaviour
 
     public void Cooldown()
     {
+        if(cooldownTime <= 0) return;
         if (!isCoolingDown)
         {
             StartCoroutine(CooldownCoroutine());
@@ -48,25 +49,25 @@ public class CooldownBurbuja : MonoBehaviour
         Color targetColor = Color.red;
 
         // Cambiar el color de forma progresiva a rojo durante 0.1 segundos
-        while (elapsedTime < 0.1f)
+        while (elapsedTime < cooldownTime/5f)
         {
             elapsedTime += Time.deltaTime;
-            tempMaterial.color = Color.Lerp(originalColor, targetColor, elapsedTime / 0.1f);
+            tempMaterial.color = Color.Lerp(originalColor, targetColor, elapsedTime / cooldownTime/5f);
             gunPart.GetComponent<Renderer>().material = tempMaterial;
             yield return null;
         }
 
         // Mantener el material rojo por el tiempo restante del cooldown
         gunPart.GetComponent<Renderer>().material = tempMaterial;
-        yield return new WaitForSeconds(cooldownTime - 0.1f);
+        yield return new WaitForSeconds(cooldownTime - cooldownTime/5f);
 
         elapsedTime = 0f;
 
         // Cambiar el color de forma progresiva de rojo al original
-        while (elapsedTime < 0.1f)
+        while (elapsedTime < cooldownTime/5f)
         {
             elapsedTime += Time.deltaTime;
-            tempMaterial.color = Color.Lerp(targetColor, originalColor, elapsedTime / 0.15f);
+            tempMaterial.color = Color.Lerp(targetColor, originalColor, elapsedTime / cooldownTime/4f);
             gunPart.GetComponent<Renderer>().material = tempMaterial;
             yield return null;
         }
