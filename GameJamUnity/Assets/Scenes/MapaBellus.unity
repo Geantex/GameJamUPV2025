@@ -2221,7 +2221,7 @@ PrefabInstance:
       objectReference: {fileID: 2133670479}
     - target: {fileID: 2226761529957363075, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
       propertyPath: currentMoney
-      value: 5000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3035367747260958442, guid: 106683c67b542c84e8cbd90a58a2e7bd, type: 3}
       propertyPath: speed
