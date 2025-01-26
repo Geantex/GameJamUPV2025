@@ -9,6 +9,13 @@ public class Enemigo : MonoBehaviour
 
     private bool yaMuerto = false;
 
+    public AdministradorAudio administradorAudio;
+
+    private void Start()
+    {
+        administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -23,7 +30,7 @@ public class Enemigo : MonoBehaviour
         yaMuerto = true;
         OnMuerte?.Invoke();
 
-        
+        administradorAudio.ReproducirSonidoRandomMuerteEnemigos();
         GameObject instanciaEfectoDeMuerte = Instantiate(efectoDeMuerte, transform.position, Quaternion.identity);
         Destroy(instanciaEfectoDeMuerte, 3f);
         Destroy(gameObject); // Destruye todo el objeto padre, asegurando que se elimine por completo
