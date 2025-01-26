@@ -31,6 +31,23 @@ public class ConfiguracionAudio : ScriptableObject
     public AudioClip charlaTortosa;
     public AudioClip idol;
 
+    public AudioClip tortosa1;
+    public AudioClip tortosa2;
+    public AudioClip tortosa3;
+
+    public AudioClip burbuja;
+    public AudioClip laser;
+
+    public AudioClip danyoJugador;
+    public AudioClip danyoEnemigo;
+    public AudioClip muerteJugador;
+    public AudioClip muerteEnemigo;
+
+    public AudioClip construccion;
+
+
+
+
 
 
 

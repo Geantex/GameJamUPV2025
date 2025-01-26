@@ -7,7 +7,12 @@ public class dispararArma : MonoBehaviour
     [SerializeField] private GameObject burbujaPrefab;
     [SerializeField] private Transform puntoDeDisparo;
     [SerializeField] private Camera camaraPrincipal;
+    public AdministradorAudio administradorAudio;
 
+    private void Start()
+    {
+        administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
+    }
     //hola soy yo el goblin que anima aqui esta el animador jijiji!
 
     private CooldownBurbuja cooldownBurbuja;
@@ -51,6 +56,7 @@ public class dispararArma : MonoBehaviour
         }
         GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
         cooldownBurbuja.Cooldown();
+        administradorAudio.ReproducirSonidoDisparoBurbuja();
         Destroy(burbuja, 15f);
         disparoMover();
 

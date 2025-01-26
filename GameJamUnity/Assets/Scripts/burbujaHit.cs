@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class burbujaHit : MonoBehaviour
 {
+   
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("laser") || other.gameObject.CompareTag("Burbuja"))
@@ -23,7 +26,7 @@ public class burbujaHit : MonoBehaviour
             if (enemigoScript != null)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>().AddMoney(100);
-
+                
                 enemigoScript.Muerte();
             }
             else
