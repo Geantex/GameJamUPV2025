@@ -7,9 +7,7 @@ public class AbrirCerrarOpciones : MonoBehaviour
     [Header ("Panel Principal)")]
     public GameObject panelPrincipal;
     public GameObject advertenciaSuperIdol;
-    public bool isSuperIdolPlaying = false; // este bool despues sera privado
-    private bool flagSuperIdolIniciar = false;
-
+    private bool isSuperIdolPlaying = false; // este bool despues sera privado
     [Header ("Panel Opciones")]
     public GameObject panelOpciones;
     
@@ -29,7 +27,7 @@ public class AbrirCerrarOpciones : MonoBehaviour
         } 
         else {
             panelOpciones.SetActive(true);
-            panelPrincipal.SetActive(false);
+            //panelPrincipal.SetActive(false);
         }
     }
 

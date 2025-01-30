@@ -39,7 +39,12 @@ public class playerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         reliquias = GetComponent<reliquiasEquipadas>(); // Obtén el componente de reliquias
         coyote_variable = COYOTE_TIME; // Inicializa el contador de Coyote Time
+
+        // Cargar sensibilidad guardada y aplicarla como multiplicador
+        float sensibilidadGuardada = PlayerPrefs.GetFloat("Sensibilidad", 1.0f);
+        mouseSensitivity *= sensibilidadGuardada;
     }
+
 
     void Update()
     {

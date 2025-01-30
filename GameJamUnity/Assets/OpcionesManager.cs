@@ -26,7 +26,7 @@ public class OpcionesManager : MonoBehaviour
         AplicarConfiguraciones();
     }
 
-    // 🔊 Volumen de efectos
+    //  Volumen de efectos
     public void CambiarVolumenEfectos(float valor)
     {
         PlayerPrefs.SetFloat("VolumenEfectos", valor);
@@ -34,7 +34,7 @@ public class OpcionesManager : MonoBehaviour
         AplicarConfiguraciones();
     }
 
-    // 🎵 Volumen de música
+    //  Volumen de música
     public void CambiarVolumenMusica(float valor)
     {
         PlayerPrefs.SetFloat("VolumenMusica", valor);
@@ -42,7 +42,7 @@ public class OpcionesManager : MonoBehaviour
         AplicarConfiguraciones();
     }
 
-    // 🎮 Sensibilidad del ratón
+    //  Sensibilidad del ratón
     public void CambiarSensibilidad(float valor)
     {
         PlayerPrefs.SetFloat("Sensibilidad", valor);
@@ -50,7 +50,7 @@ public class OpcionesManager : MonoBehaviour
         AplicarConfiguraciones();
     }
 
-    // ⚔️ Dificultad (0 = Fácil, 1 = Normal, 2 = Difícil)
+    //  Dificultad (0 = Fácil, 1 = Normal, 2 = Difícil)
     public void CambiarDificultad(int valor)
     {
         PlayerPrefs.SetInt("Dificultad", valor);
@@ -64,6 +64,13 @@ public class OpcionesManager : MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("VolumenEfectos");
 
         // Aquí podrías ajustar la sensibilidad en el sistema de control del jugador
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            // Cargar sensibilidad guardada y aplicarla como multiplicador
+            float sensibilidadGuardada = PlayerPrefs.GetFloat("Sensibilidad", 1.0f);
+            player.GetComponent<playerController>().mouseSensitivity *= sensibilidadGuardada;
+        }
         // También aplicar la dificultad si afecta a la IA, daño enemigo, etc.
     }
 }
