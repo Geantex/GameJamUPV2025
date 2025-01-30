@@ -38,8 +38,8 @@ public class dispararArma : MonoBehaviour
         Vector3 direccionDisparo;
         Quaternion rotacionDisparo;
 
-        // Si el Raycast golpea algo, calcula la dirección hacia el punto de impacto
-        if (Physics.Raycast(ray, out hit))
+        // Si el Raycast golpea algo y la distancia es mayor a 0.8, calcula la dirección hacia el punto de impacto
+        if (Physics.Raycast(ray, out hit) && Vector3.Distance(puntoDeDisparo.position, hit.point) > 1.2f)
         {
             direccionDisparo = (hit.point - puntoDeDisparo.position).normalized;
             rotacionDisparo = Quaternion.LookRotation(direccionDisparo);
@@ -47,10 +47,11 @@ public class dispararArma : MonoBehaviour
         }
         else
         {
-            // Si no golpea nada, dispara hacia adelante desde la cámara
+            // Si no golpea nada o está demasiado cerca, dispara hacia adelante desde la cámara
             direccionDisparo = camaraPrincipal.transform.forward;
             rotacionDisparo = Quaternion.LookRotation(direccionDisparo);
         }
+
         GameObject burbuja = Instantiate(burbujaPrefab, puntoDeDisparo.position, rotacionDisparo);
         cooldownBurbuja.Cooldown();
         GetComponent<girar_municion>().BoostSpeed();

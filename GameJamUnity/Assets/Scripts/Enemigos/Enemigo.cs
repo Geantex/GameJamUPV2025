@@ -6,6 +6,7 @@ public class Enemigo : MonoBehaviour
     public delegate void MuerteHandler();
     public event MuerteHandler OnMuerte;
     public GameObject efectoDeMuerte; // Prefab del efecto de muerte
+    public int damage;
 
     private bool yaMuerto = false;
 
@@ -13,8 +14,17 @@ public class Enemigo : MonoBehaviour
     public GameObject cigarro;
     private void Start()
     {
+        // aqui meteremos el daño del enemigo en modo facil, normal y dificil
+        if(true){
+            // normal y dificil
+            damage = 15;
+        } else{
+            // facil
+            damage = 10;
+        }
+
         administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
-        if(administradorAudio){
+        if(administradorAudio != null){
           administradorAudio.ReproducirSonidoRandomAparicionEnemigos();
         }
         

@@ -23,6 +23,5 @@ public class contadorCasa : MonoBehaviour
     public void SumarContador()
     {
         contador++;
-        Debug.Log("te lo dije nigga");
     }
 }

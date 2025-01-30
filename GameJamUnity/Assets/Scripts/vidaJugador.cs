@@ -32,7 +32,7 @@ public class VidaJugador : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // Reducir la vida del jugador
-            RestarVida(20);
+            RestarVida(collision.gameObject.GetComponent<Enemigo>().damage);
         }
     }
 

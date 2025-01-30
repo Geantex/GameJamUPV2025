@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogColor: {r: 0.40705585, g: 0.5424573, b: 0.6679245, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -1314,6 +1314,10 @@ PrefabInstance:
       propertyPath: textomejora
       value: 
       objectReference: {fileID: 1682377599}
+    - target: {fileID: 7455385189907726177, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
+      propertyPath: tiempoMostrarTexto
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8133385592762404830, guid: 7be4e3caff30758478b7cce82f918156, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.3531542
