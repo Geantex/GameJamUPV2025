@@ -23,6 +23,7 @@ public class AdministradorAudio : MonoBehaviour
     [SerializeField] private ConfiguracionAudio configuracionAudio;
 
     private AudioSource fuenteAudioLoop; // Nueva fuente para sonidos en bucle
+    public AudioSource musicaAudio;
 
     //----------------------------------------------------------------------------------------------------------------------//
     //------------------------------------------------- M�TODOS ------------------------------------------------------------//
@@ -34,8 +35,25 @@ public class AdministradorAudio : MonoBehaviour
             Instancia = this;
             DontDestroyOnLoad(gameObject);
 
+            Debug.Log("Burbujeante: Administrador de audio creado");
+            // Obtener la fuente de audio principal
+            
+            // aplicar playerprefs
+            fuenteAudio.volume = PlayerPrefs.GetFloat("VolumenEfectos", 1.0f);
+            Debug.Log("Volumen efectos: " + fuenteAudio.volume);
+
+            // Obtener la fuente de m�sica (que esta en el GameManager en vez del AudioManager)
+            
+            // aplicar playerprefs
+            musicaAudio.volume = PlayerPrefs.GetFloat("VolumenMusica", 1.0f);
+            Debug.Log("Volumen musica: " + musicaAudio.volume);
+
+
+
             // Crear una fuente de audio adicional para sonidos en bucle
             fuenteAudioLoop = gameObject.AddComponent<AudioSource>();
+            fuenteAudioLoop.volume = PlayerPrefs.GetFloat("VolumenEfectos", 1.0f);
+            Debug.Log("Volumen efectosLoop: " + fuenteAudioLoop.volume);
             fuenteAudioLoop.loop = true;
         }
         else

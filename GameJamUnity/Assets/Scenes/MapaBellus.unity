@@ -2428,6 +2428,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 469002393}
     m_Modifications:
+    - target: {fileID: 22348463591595127, guid: 9bfaa7abfdf86a548a873fdfc75f1003, type: 3}
+      propertyPath: musicaAudio
+      value: 
+      objectReference: {fileID: 469002394}
+    - target: {fileID: 22348463591595127, guid: 9bfaa7abfdf86a548a873fdfc75f1003, type: 3}
+      propertyPath: efectosAudio
+      value: 
+      objectReference: {fileID: 2061197917}
     - target: {fileID: 7063373015092356230, guid: 9bfaa7abfdf86a548a873fdfc75f1003, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2951,6 +2959,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2061197917 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8813739749067191938, guid: 9bfaa7abfdf86a548a873fdfc75f1003, type: 3}
+  m_PrefabInstance: {fileID: 1703264400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2131406991
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -21,7 +21,8 @@ public class AbrirCerrarOpciones : MonoBehaviour
 
     public void AbrirOpciones()
     {
-        if(isSuperIdolPlaying){
+        if(false){
+        //if(isSuperIdolPlaying){
             // decir que hay que esperar a que acabe super-idol
             advertenciaSuperIdol.SetActive(true);
         } 
