@@ -20,8 +20,11 @@ public class OpcionesManager : MonoBehaviour
         volumenEfectosSlider.value = PlayerPrefs.GetFloat("VolumenEfectos", 1.0f);
         volumenMusicaSlider.value = PlayerPrefs.GetFloat("VolumenMusica", 1.0f);
         sensibilidadSlider.value = PlayerPrefs.GetFloat("Sensibilidad", 1.0f);
+
+        if(dificultadDropdown != null)
         dificultadDropdown.value = PlayerPrefs.GetInt("Dificultad", 1); // Por defecto: Normal
 
+        if(dificultadDropdown != null)
         Debug.Log("Valores cargados: " +
                   "\nVolumen Efectos: " + volumenEfectosSlider.value +
                   "\nVolumen Música: " + volumenMusicaSlider.value +
@@ -36,7 +39,7 @@ public class OpcionesManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("VolumenEfectos", valor);
         PlayerPrefs.Save();
-        Debug.Log("Volumen de efectos actualizado a: " + valor);
+        // Debug.Log("Volumen de efectos actualizado a: " + valor);
     }
 
     // Volumen de música
@@ -44,7 +47,7 @@ public class OpcionesManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("VolumenMusica", valor);
         PlayerPrefs.Save();
-        Debug.Log("Volumen de música actualizado a: " + valor);
+        // Debug.Log("Volumen de música actualizado a: " + valor);
     }
 
     // Sensibilidad del ratón
@@ -52,7 +55,7 @@ public class OpcionesManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("Sensibilidad", valor);
         PlayerPrefs.Save();
-        Debug.Log("Sensibilidad del ratón actualizada a: " + valor);
+        // Debug.Log("Sensibilidad del ratón actualizada a: " + valor);
 
         AplicarConfiguraciones();
     }
@@ -62,7 +65,7 @@ public class OpcionesManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("Dificultad", valor);
         PlayerPrefs.Save();
-        Debug.Log("Dificultad actualizada a: " + (valor == 0 ? "Fácil" : valor == 1 ? "Normal" : "Difícil"));
+        // Debug.Log("Dificultad actualizada a: " + (valor == 0 ? "Fácil" : valor == 1 ? "Normal" : "Difícil"));
     }
 
     void AplicarConfiguraciones()
@@ -71,9 +74,8 @@ public class OpcionesManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            float sensibilidadGuardada = PlayerPrefs.GetFloat("Sensibilidad", 1.0f);
-            player.GetComponent<playerController>().mouseSensitivity *= sensibilidadGuardada;
-            Debug.Log("Sensibilidad aplicada al jugador: " + player.GetComponent<playerController>().mouseSensitivity);
+            player.GetComponent<playerController>().ActualizarSensibilidad();
+            // Debug.Log("Sensibilidad aplicada al jugador: " + player.GetComponent<playerController>().mouseSensitivity);
         }
     }
 }

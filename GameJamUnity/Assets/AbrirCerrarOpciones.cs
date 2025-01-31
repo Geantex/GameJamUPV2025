@@ -7,15 +7,18 @@ public class AbrirCerrarOpciones : MonoBehaviour
     [Header ("Panel Principal)")]
     public GameObject panelPrincipal;
     public GameObject advertenciaSuperIdol;
-    private bool isSuperIdolPlaying = false; // este bool despues sera privado
+    private bool isSuperIdolPlaying = false;
     [Header ("Panel Opciones")]
     public GameObject panelOpciones;
+    public bool isPauseMenu;
     
     
 
     void Start(){
-        advertenciaSuperIdol.SetActive(false);
-        StartCoroutine(SuperIdolPlaying());
+        if(advertenciaSuperIdol != null){
+            advertenciaSuperIdol.SetActive(false);
+            StartCoroutine(SuperIdolPlaying());
+        }
     }
     
 
@@ -30,10 +33,19 @@ public class AbrirCerrarOpciones : MonoBehaviour
             panelOpciones.SetActive(true);
             panelPrincipal.SetActive(false);
         }
+
+        if(isPauseMenu){
+            Time.timeScale = 0;
+        }
     }
 
     public void CerrarOpciones()
     {
+
+        if(isPauseMenu){
+            Time.timeScale = 1f;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>().LockCursor();
+        }
         panelPrincipal.SetActive(true);
         panelOpciones.SetActive(false);
     }

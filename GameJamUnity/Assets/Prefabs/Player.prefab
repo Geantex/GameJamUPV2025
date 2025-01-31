@@ -252,9 +252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6911eb86b120bf14f8c87fd7ed6c994a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
   speed: 4
   sprintMultiplier: 1.4
   jumpForce: 8
+  baseMouseSensitivity: 800
   mouseSensitivity: 800
   gravity: -20
   head: {fileID: 2716317363955405233}

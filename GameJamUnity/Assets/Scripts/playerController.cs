@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    [Header ("Menú de pausa")]
+    public GameObject pauseMenu;
+
+    [Header ("Configuración de Movimiento")]
     public float speed; // Velocidad base de movimiento
     public float sprintMultiplier; // Multiplicador de velocidad al esprintar
     public float jumpForce; // Fuerza del salto
-    public float mouseSensitivity; // Sensibilidad del ratón
+    public float baseMouseSensitivity; // Sensibilidad del ratón
+    public float mouseSensitivity; // Sensibilidad del ratón ajustable desde el inspector
     public float gravity; // Gravedad ajustable desde el inspector
     public Transform head; // Cámara (o cabeza) para rotar hacia arriba/abajo
     public Transform gun; // Arma para rotar hacia arriba/abajo
@@ -15,7 +20,7 @@ public class playerController : MonoBehaviour
     private Vector3 currentMomentum = Vector3.zero; // Momentum acumulado del jugador
     private float verticalRotation = 0f; // Rotación vertical de la cabeza
     private float verticalVelocity = 0f; // Velocidad vertical (para saltos y gravedad)
-    private bool isCursorLocked = true; // Estado del cursor bloqueado
+    public bool isCursorLocked = true; // Estado del cursor bloqueado
     private int airJumpsLeft = 0; // Contador de saltos en el aire disponibles
     public int temporalAirJumpsLeft = 0; // Contador de saltos en el aire temporales
 
@@ -39,11 +44,15 @@ public class playerController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         reliquias = GetComponent<reliquiasEquipadas>(); // Obtén el componente de reliquias
         coyote_variable = COYOTE_TIME; // Inicializa el contador de Coyote Time
+        ActualizarSensibilidad();
+    }
 
+    public void ActualizarSensibilidad()
+    {
         // Cargar sensibilidad guardada y aplicarla como multiplicador
         float sensibilidadGuardada = PlayerPrefs.GetFloat("Sensibilidad", 1.0f);
         Debug.Log("SensGuardada: " + sensibilidadGuardada);
-        mouseSensitivity *= sensibilidadGuardada;
+        mouseSensitivity = baseMouseSensitivity * sensibilidadGuardada;
         Debug.Log("Sensibilidad: " + mouseSensitivity);
     }
 
@@ -55,14 +64,16 @@ public class playerController : MonoBehaviour
         {
             if (isCursorLocked)
             {
+                pauseMenu.GetComponentInChildren<AbrirCerrarOpciones>().AbrirOpciones(); // Abrir el menú de pausa
                 UnlockCursor(); // Liberar cursor
-            }
-            else
-            {
-                LockCursor(); // Bloquear cursor
-            }
-        }
 
+            }
+            // else
+            // {
+            //     LockCursor(); // Bloquear cursor
+            //     pauseMenu.GetComponentInChildren<AbrirCerrarOpciones>().CerrarOpciones(); // Cerrar el menú de pausa
+            // }
+        }
         // Si el cursor no está bloqueado, no permitir movimiento o rotación
         if (!isCursorLocked) return;
 
@@ -229,7 +240,7 @@ public class playerController : MonoBehaviour
     }
 
     // Método para bloquear el cursor
-    private void LockCursor()
+    public void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -237,7 +248,7 @@ public class playerController : MonoBehaviour
     }
 
     // Método para liberar el cursor
-    private void UnlockCursor()
+    public void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

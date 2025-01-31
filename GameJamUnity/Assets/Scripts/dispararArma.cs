@@ -30,7 +30,8 @@ public class dispararArma : MonoBehaviour
 
     private void DispararBurbuja()
     {
-        if (cooldownBurbuja.isCoolingDown) return;
+        playerController playerController = GetComponentInParent<playerController>();
+        if (cooldownBurbuja.isCoolingDown || playerController.isCursorLocked == false) return;
         // Crear un Ray desde el centro de la cámara
         Ray ray = camaraPrincipal.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;

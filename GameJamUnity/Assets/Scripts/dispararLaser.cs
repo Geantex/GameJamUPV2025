@@ -81,6 +81,8 @@ public class LaserMagico : MonoBehaviour
 
     private void OnDisparar()
     {
+        playerController playerController = GetComponentInParent<playerController>();
+        if (playerController.isCursorLocked == false) return;
         if (!disparando) // Solo activa si no está disparando
         {
             disparando = true; // Cambia el estado
