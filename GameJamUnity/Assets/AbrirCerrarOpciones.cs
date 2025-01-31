@@ -50,6 +50,12 @@ public class AbrirCerrarOpciones : MonoBehaviour
         panelOpciones.SetActive(false);
     }
 
+    public void SalirAlMenu()
+    {
+        Time.timeScale = 1f;
+        GetComponentInParent<SceneLoader>().LoadScene();
+    }
+
     // corutina para esperar a que acabe super-idol
     public IEnumerator SuperIdolPlaying(){
         isSuperIdolPlaying = true;

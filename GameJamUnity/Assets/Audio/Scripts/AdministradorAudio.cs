@@ -137,7 +137,7 @@ public class AdministradorAudio : MonoBehaviour
     public void ReproducirSonidoBurbujaPop()
     {
         AudioClip clip = configuracionAudio.burbuja;
-        ReproducirSonido(clip, 1.8f);
+        ReproducirSonido(clip);
     }
 
     public void ReproducirSonidoDisparoLaser()
