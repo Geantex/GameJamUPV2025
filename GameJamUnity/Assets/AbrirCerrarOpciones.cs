@@ -27,7 +27,7 @@ public class AbrirCerrarOpciones : MonoBehaviour
         } 
         else {
             panelOpciones.SetActive(true);
-            //panelPrincipal.SetActive(false);
+            panelPrincipal.SetActive(false);
         }
     }
 

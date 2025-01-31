@@ -61,7 +61,7 @@ public class OpcionesManager : MonoBehaviour
     void AplicarConfiguraciones()
     {
         // Aplicar el volumen de efectos y música (ajusta esto según tu sistema de audio)
-        AudioListener.volume = PlayerPrefs.GetFloat("VolumenEfectos");
+        //AudioListener.volume = PlayerPrefs.GetFloat("VolumenEfectos");
 
         // Aquí podrías ajustar la sensibilidad en el sistema de control del jugador
         GameObject player = GameObject.FindGameObjectWithTag("Player");
