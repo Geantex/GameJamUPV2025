@@ -51,9 +51,9 @@ public class playerController : MonoBehaviour
     {
         // Cargar sensibilidad guardada y aplicarla como multiplicador
         float sensibilidadGuardada = PlayerPrefs.GetFloat("Sensibilidad", 1.0f);
-        Debug.Log("SensGuardada: " + sensibilidadGuardada);
+        // Debug.Log("SensGuardada: " + sensibilidadGuardada);
         mouseSensitivity = baseMouseSensitivity * sensibilidadGuardada;
-        Debug.Log("Sensibilidad: " + mouseSensitivity);
+        // Debug.Log("Sensibilidad: " + mouseSensitivity);
     }
 
 

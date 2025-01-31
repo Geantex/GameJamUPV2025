@@ -40,6 +40,7 @@ public class OpcionesManager : MonoBehaviour
         PlayerPrefs.SetFloat("VolumenEfectos", valor);
         PlayerPrefs.Save();
         // Debug.Log("Volumen de efectos actualizado a: " + valor);
+        AplicarConfiguraciones();
     }
 
     // Volumen de música
@@ -48,6 +49,7 @@ public class OpcionesManager : MonoBehaviour
         PlayerPrefs.SetFloat("VolumenMusica", valor);
         PlayerPrefs.Save();
         // Debug.Log("Volumen de música actualizado a: " + valor);
+        AplicarConfiguraciones();
     }
 
     // Sensibilidad del ratón
@@ -76,6 +78,14 @@ public class OpcionesManager : MonoBehaviour
         {
             player.GetComponent<playerController>().ActualizarSensibilidad();
             // Debug.Log("Sensibilidad aplicada al jugador: " + player.GetComponent<playerController>().mouseSensitivity);
+        }
+        try
+        {
+            GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>().ActualizarVolumenGeneral();
+        }
+        catch (System.Exception)
+        {
+            Debug.LogWarning("No se encontró el administrador de audio. Posiblemente estamos en la escena de inicio.");
         }
     }
 }

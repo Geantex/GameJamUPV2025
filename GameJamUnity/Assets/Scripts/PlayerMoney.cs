@@ -56,8 +56,8 @@ public class PlayerMoney : MonoBehaviour
     {
         if (moneyText != null)
         {
-            Debug.Log("dentro dinero");
-            Debug.Log(currentMoney);
+            // Debug.Log("dentro dinero");
+            // Debug.Log(currentMoney);
 
             moneyText.text = "Dinero: " + currentMoney;
         }

@@ -62,12 +62,19 @@ public class AdministradorAudio : MonoBehaviour
         }
     }
 
-    public void ReproducirSonido(AudioClip clip)
+    public void ActualizarVolumenGeneral(){
+        fuenteAudio.volume = PlayerPrefs.GetFloat("VolumenEfectos", 1.0f);
+        musicaAudio.volume = PlayerPrefs.GetFloat("VolumenMusica", 1.0f);
+        fuenteAudioLoop.volume = PlayerPrefs.GetFloat("VolumenEfectos", 1.0f);
+        Debug.Log("Volumen efectosLoop: " + fuenteAudioLoop.volume);
+    }
+
+    public void ReproducirSonido(AudioClip clip, float pitch = 1.0f)
     {
         if (clip != null)
         {
             // randomizar pitch para que no suene igual siempre de 90% a 110%
-            fuenteAudio.pitch = Random.Range(0.9f, 1.1f);
+            fuenteAudio.pitch = Random.Range(pitch*0.9f, pitch*1.1f);
             fuenteAudio.PlayOneShot(clip, configuracionAudio.volumenGlobal);
         }
     }
@@ -125,6 +132,12 @@ public class AdministradorAudio : MonoBehaviour
     {
         AudioClip clip = configuracionAudio.burbuja;
         ReproducirSonido(clip);
+    }
+
+    public void ReproducirSonidoBurbujaPop()
+    {
+        AudioClip clip = configuracionAudio.burbuja;
+        ReproducirSonido(clip, 1.8f);
     }
 
     public void ReproducirSonidoDisparoLaser()
