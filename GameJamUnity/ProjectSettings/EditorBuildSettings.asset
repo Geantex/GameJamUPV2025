@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 39d67ac270ab4ca44a578b69f129bb74
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/charlaTortosa.unity
+    guid: e20246746aec74b43883dd7bc953c894
   - enabled: 1
     path: Assets/Scenes/MapaBellus.unity
     guid: 75428bbf19622ab4489b601ff80c249a
@@ -20,7 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ganar.unity
     guid: 0101f5f4321e75f46b79d8ee8f66361c
-  - enabled: 1
-    path: Assets/Scenes/charlaTortosa.unity
-    guid: e20246746aec74b43883dd7bc953c894
   m_configObjects: {}
