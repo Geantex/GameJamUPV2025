@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuenteAudio: {fileID: 8813739749067191938}
   configuracionAudio: {fileID: 11400000, guid: bacc474d77a14f040858f8e3d4f7d348, type: 2}
+  musicaAudio: {fileID: 0}
 --- !u!82 &8813739749067191938
 AudioSource:
   m_ObjectHideFlags: 0

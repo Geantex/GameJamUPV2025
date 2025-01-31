@@ -66,6 +66,8 @@ public class AdministradorAudio : MonoBehaviour
     {
         if (clip != null)
         {
+            // randomizar pitch para que no suene igual siempre de 90% a 110%
+            fuenteAudio.pitch = Random.Range(0.9f, 1.1f);
             fuenteAudio.PlayOneShot(clip, configuracionAudio.volumenGlobal);
         }
     }

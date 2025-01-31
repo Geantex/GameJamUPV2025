@@ -24,6 +24,10 @@ public class PlayerMoney : MonoBehaviour
     // Funci�n para a�adir dinero
     public void AddMoney(int amount)
     {
+        int dificultad = PlayerPrefs.GetInt("Dificultad", 1); // Por defecto: Normal
+        if(dificultad == 0){
+            amount = (int)(amount * 1.5);
+        }
         currentMoney += amount;
         UpdateMoneyText(); // Actualizar el texto
         //Debug.Log("Se han a�adido " + amount + " monedas. Total ahora: " + currentMoney);

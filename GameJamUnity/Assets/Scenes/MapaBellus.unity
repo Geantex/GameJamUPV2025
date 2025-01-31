@@ -458,6 +458,18 @@ PrefabInstance:
       propertyPath: tiempoEntreOleadas
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2040498846935268385, guid: 3c77d5d3c8ec53f43863039bfb20f799, type: 3}
+      propertyPath: dificultadFacil
+      value: 
+      objectReference: {fileID: 11400000, guid: 09c627a3b9de1484295d39519a4071ae, type: 2}
+    - target: {fileID: 2040498846935268385, guid: 3c77d5d3c8ec53f43863039bfb20f799, type: 3}
+      propertyPath: dificultadNormal
+      value: 
+      objectReference: {fileID: 11400000, guid: 395590d8fd2224f48b6bcd632a5ef191, type: 2}
+    - target: {fileID: 2040498846935268385, guid: 3c77d5d3c8ec53f43863039bfb20f799, type: 3}
+      propertyPath: dificultadDificil
+      value: 
+      objectReference: {fileID: 11400000, guid: 6fd98081f4908194ab5fc2699c71d29a, type: 2}
     - target: {fileID: 2454252611414789415, guid: 3c77d5d3c8ec53f43863039bfb20f799, type: 3}
       propertyPath: enemigosCercanosMax
       value: 25

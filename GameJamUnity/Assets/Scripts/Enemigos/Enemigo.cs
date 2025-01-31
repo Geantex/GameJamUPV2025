@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemigo : MonoBehaviour
 {
@@ -14,14 +15,25 @@ public class Enemigo : MonoBehaviour
     public GameObject cigarro;
     private void Start()
     {
-        // aqui meteremos el daño del enemigo en modo facil, normal y dificil
-        if(true){
-            // normal y dificil
-            damage = 15;
-        } else{
-            // facil
-            damage = 10;
+        int dificultad = PlayerPrefs.GetInt("Dificultad", 1); // Por defecto: Normal
+        float velocidadEnemigo = 6.2f; // este es un valor estandar para que Unity no se queje - el goblin suicida (pronto todo acabara)
+        switch(dificultad){
+            case 0:
+                damage = 5;
+                velocidadEnemigo = 4f;
+                break;
+            case 1:
+                damage = 15;
+                velocidadEnemigo = 6.2f;
+                break;
+            case 2:
+                damage = 20;
+                velocidadEnemigo = 7.2f;
+                break;
         }
+        Debug.Log("Asignando velocidad de enemigo: " + velocidadEnemigo);
+        gameObject.GetComponent<NavMeshAgent>().speed = velocidadEnemigo;
+
 
         administradorAudio = GameObject.FindGameObjectWithTag("administradorAudio").GetComponent<AdministradorAudio>();
         if(administradorAudio != null){

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4233755189762976299}
   - component: {fileID: 2454252611414789415}
   - component: {fileID: 291146666130175553}
+  - component: {fileID: 2040498846935268385}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -61,8 +62,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb7be6eada8f0c4eb65d5f501f88eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numeroOleadas: 10
-  enemigosMinPorOleada: 5
-  enemigosMaxPorOleada: 15
   tiempoEntreOleadas: 5
   jugador: {fileID: 0}
+  textoOleada: {fileID: 0}
+  textoTiempo: {fileID: 0}
+--- !u!114 &2040498846935268385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990930385292936700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce848c423c3edf047a4d41f117e24457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
